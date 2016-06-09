@@ -212,6 +212,12 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#lytics">Lytics</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#google-analytics">Google Analytics</a></li>
+                
+            
             </ul>
         
     </li>
@@ -249,10 +255,139 @@
           <div role="main">
             <div class="section">
               
-                <p>[TODO: TRACKING]
-[TODO: LYTICS]
-[TODO: GOOGLE]
-[TODO: CUSTOM USING CALLBACKS]</p>
+                <p>Pathfora can send tracking events and the user data submitted to Lytics and Google Analytics, as long as your tags are all set up in the correct order, module data will be sent automatically. Below we will look at which fields are sent in detail and their formats.</p>
+<h2 id="lytics">Lytics</h2>
+<p>As long as your <a href="#">Lytics javascript tag</a> is loaded before the Pathfora tag, all event data, and data collected from modules with user input will be sent to the <code>default</code> stream in your Lytics account. The following raw data fields can be sent to Lytics by Pathfora.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pf-widget-id</code></td>
+<td>string</td>
+<td>id of the module set in the config</td>
+</tr>
+<tr>
+<td><code>pf-widget-type</code></td>
+<td>string</td>
+<td>type of the module</td>
+</tr>
+<tr>
+<td><code>pf-widget-layout</code></td>
+<td>string</td>
+<td>layout of the module</td>
+</tr>
+<tr>
+<td><code>pf-widget-variant</code></td>
+<td>int</td>
+<td>variant of the module</td>
+</tr>
+<tr>
+<td><code>pf-widget-event</code></td>
+<td>string</td>
+<td>name of the event (see below)</td>
+</tr>
+<tr>
+<td><code>pf-widget-action</code></td>
+<td>string</td>
+<td>custom tracking names for button click events as defined in <a href="../callbacks/#confirmaction">confirmAction</a> or <a href="../callbacks/#cancelaction">cancelAction</a></td>
+</tr>
+<tr>
+<td><code>pf-form-username</code></td>
+<td>string</td>
+<td>user submitted value of "name" field on module</td>
+</tr>
+<tr>
+<td><code>pf-form-title</code></td>
+<td>string</td>
+<td>user submitted value of "title" field on module</td>
+</tr>
+<tr>
+<td><code>pf-form-email</code></td>
+<td>string</td>
+<td>user submitted value of "email" field on module</td>
+</tr>
+<tr>
+<td><code>pf-form-message</code></td>
+<td>string</td>
+<td>user submitted value of "message" field on module</td>
+</tr>
+<tr>
+<td><code>pf-form-organization</code></td>
+<td>string</td>
+<td>user submitted value of "organization" field on module</td>
+</tr>
+</tbody>
+</table>
+<table>
+  <tr>
+    <td colspan="2" align="center"><code>pf-widget-event</code> string</td>
+  </tr>
+  <tr>
+    <th>VALUE</th>
+    <th>BEHAVIOR</th>
+  </tr>
+  <tr>
+    <td>show</td>
+    <td>module was displayed to the user</td>
+  </tr>
+  <tr>
+    <td>close</td>
+    <td>module was closed by the user</td>
+  </tr>
+  <tr>
+    <td>confirm</td>
+    <td>"confirm" button was clicked by the user</td>
+  </tr>
+  <tr>
+    <td>cancel</td>
+    <td>"cancel" button was clicked by the user</td>
+  </tr>
+  <tr>
+    <td>submit</td>
+    <td>user submitted information from a <a href="/types/form">form module</a></td>
+  </tr>
+  <tr>
+    <td>subscribe</td>
+    <td>user submitted email from a <a href="/types/subscription">subscription module</a></td>
+  </tr>
+  <tr>
+    <td>unlock</td>
+    <td>user submitted information from a <a href="/types/gate">gate module</a></td>
+  </tr>
+</table>
+
+<p>To verify that the event data fields are being sent properly to Lytics, you can simulate an action by interacting with your module and checking that the expected fields exist in the data streams section of your Lytics Account.</p>
+<p>By default these fields are fields are available as user fields so that you can use them in the creation of segments. If you need help using these fields or would like to map the user fields differently please contact your customer success representative <code>success@getlytics.com</code>.</p>
+<h2 id="google-analytics">Google Analytics</h2>
+<p>Pathfora will send event data from the modules on your website to your google analytics account as long as it has access to the <code>ga</code> function. This requires that you have the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/">analytics.js snippet</a> on your website loaded before the Pathfora tag. An event sent to google analytics by pathfora will use the following attributes for <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/events#overview">event tracking</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventCategory</td>
+<td>string</td>
+<td>Lytics</td>
+</tr>
+<tr>
+<td>eventAction</td>
+<td>string</td>
+<td>[id of module] : [event name]</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>[event name]</code> signifier in eventAction will match the event names for the <code>pf-widget-event</code> field <a href="#lytics">sent to Lytics</a>, however if you've defined custom names in the <a href="../callbacks/#confirmaction">confirmAction</a> or <a href="../callbacks/#cancelaction">cancelAction</a> settings this will override the event name for those actions.</p>
               
             </div>
           </div>
