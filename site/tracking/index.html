@@ -65,6 +65,35 @@
           
             <li>
     <ul class="subnav">
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../api/methods/">Methods</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../api/acctid/">Lytics Account ID</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../api/config/">Generalized Configuration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
     <li><span>Types</span></li>
 
         
@@ -142,7 +171,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../customization/buttons/">Buttons</a>
+        <a class="" href="../customization/buttons/">Action Buttons</a>
         
     </li>
 
@@ -200,13 +229,6 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../config/">Generalizing Config</a>
-        
-    </li>
-<li>
-          
-            <li>
     <li class="toctree-l1 current">
         <a class="current" href="./">Tracking</a>
         
@@ -255,9 +277,9 @@
           <div role="main">
             <div class="section">
               
-                <p>Pathfora can send tracking events and the user data submitted to Lytics and Google Analytics, as long as your tags are all set up in the correct order, module data will be sent automatically. Below we will look at which fields are sent in detail and their formats.</p>
+                <p>Pathfora can send tracking events and the user data submitted to Lytics and Google Analytics. As long as your tags are all set up in the correct order, module data will be sent automatically. Below we will look at which fields are sent in detail and their formats.</p>
 <h2 id="lytics">Lytics</h2>
-<p>As long as your <a href="#">Lytics javascript tag</a> is loaded before the Pathfora tag, all event data, and data collected from modules with user input will be sent to the <code>default</code> stream in your Lytics account. The following raw data fields can be sent to Lytics by Pathfora.</p>
+<p>As long as your <a href="https://activate.getlytics.com/resources/documentation/">Lytics javascript tag</a> is loaded before the Pathfora tag, all event data and data collected from modules with user input will be sent to the the stream <a href="https://activate.getlytics.com/resources/documentation/jstag">configured in your Lytics javascript tag</a>. The following raw data fields can be sent to Lytics by Pathfora.</p>
 <table>
 <thead>
 <tr>
@@ -325,13 +347,16 @@
 </tbody>
 </table>
 <table>
-  <tr>
-    <td colspan="2" align="center"><code>pf-widget-event</code> string</td>
-  </tr>
-  <tr>
-    <th>VALUE</th>
-    <th>BEHAVIOR</th>
-  </tr>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>pf-widget-event</code> string</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
   <tr>
     <td>show</td>
     <td>module was displayed to the user</td>
@@ -363,9 +388,9 @@
 </table>
 
 <p>To verify that the event data fields are being sent properly to Lytics, you can simulate an action by interacting with your module and checking that the expected fields exist in the data streams section of your Lytics Account.</p>
-<p>By default these fields are fields are available as user fields so that you can use them in the creation of segments. If you need help using these fields or would like to map the user fields differently please contact your customer success representative <code>success@getlytics.com</code>.</p>
+<p>By default these fields are available as user fields so that you can use them in the creation of segments. If you need help using these fields or would like to map the user fields differently please contact your customer success representative <code>success@getlytics.com</code>.</p>
 <h2 id="google-analytics">Google Analytics</h2>
-<p>Pathfora will send event data from the modules on your website to your google analytics account as long as it has access to the <code>ga</code> function. This requires that you have the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/">analytics.js snippet</a> on your website loaded before the Pathfora tag. An event sent to google analytics by pathfora will use the following attributes for <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/events#overview">event tracking</a>:</p>
+<p>Pathfora will send event data from the modules on your website to your Google Analytics account as long as it has access to the <code>ga</code> function. This requires that you have the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/">analytics.js snippet</a> on your website loaded before the Pathfora tag. An event sent to Google Analytics by Pathfora will use the following attributes for <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/events#overview">event tracking</a>:</p>
 <table>
 <thead>
 <tr>
@@ -396,7 +421,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../config/" class="btn btn-neutral" title="Generalizing Config"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../display_conditions/" class="btn btn-neutral" title="Display Conditions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -422,7 +447,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../config/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../display_conditions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>

@@ -1,22 +1,19 @@
-Part of what makes Pathfora powerful is it's ability to interact with [Lytics](http://www.getlytics.com/) and target certain audiences with certain modules. Setting up the targeting in Pathfora requires an object with certain targeting rules as the first param to `initializeWidgets` instead of a array of widgets. And it must include a second, `string` param, your lytics account ID.
+Part of what makes Pathfora powerful is its ability to interact with [Lytics](http://www.getlytics.com/) and target certain audiences with certain modules. Setting up the targeting in Pathfora requires an object with certain targeting rules as the first param to [initializeWidgets](/api/methods.md#initializewidgets) and your Lytics Account ID as a second parameter.
 
 ``` javascript
 var modules = {
-  // targeting rules
+  target: [{
+    segment: 'smt_name',
+    widgets: [ module ]
+  }]
 };
 
-pathfora.initializeWidgets(modules, "YOUR LYTICS ACCOUNT ID");
+pathfora.initializeWidgets(modules, 'YOUR LYTICS ACCOUNT ID');
 ```
 
-## Setup
+## Setup Audiences
 
-To target an audience with a module you will need to know your Lytics Account ID. Your account ID should be the same as the one in the Lytics javascript tag.
-
-<img class="full" src="../../assets/acctid.jpg" alt="Lytics Jstag Account Id">
-
-You will also need to make sure that any domain you want to use Pathfora on is whitelisted in your account, you can contact your customer success representative `success@getlytics.com` to do this. Your account should already have any domain whitelisted with the lytics javascript tag installed on it, but be sure to include your local and testing environments. 
-
-Finally you'll need to have at least one audience built in Lytics that you want to target with a module. Make sure that you have API access enabled for the audience, and have entered an ID.
+You'll need to have at least one audience built in Lytics that you want to target with a module. Make sure that you have API access enabled for the audience, and have entered an ID, you will use this id in the targeting rules.
 
 <img class="full" src="../../assets/api_access.jpg" alt="Lytics Jstag Account Id">
 
@@ -25,27 +22,34 @@ Finally you'll need to have at least one audience built in Lytics that you want 
 A list of rules assigning modules to audiences.
 
 <table>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+  
   <tr>
     <td>target</td>
-    <td>array</td>
-    <td>list of objects containing targeting rules</td>
+    <td>string</td>
+    <td>list of targeting rule objects</td>
   </tr>
+  <tr>
 </table>
 
 <table>
-  <tr>
-    <td colspan="3" align="center">object in <code>target</code> array</td>
-  </tr>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
+  <thead>
+    <tr>
+      <td colspan="3" align="center">object in <code>target</code> array</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
   <tr>
     <td>segment</td>
     <td>string</td>
@@ -54,7 +58,7 @@ A list of rules assigning modules to audiences.
   <tr>
     <td>widgets</td>
     <td>array</td>
-    <td>list of modules to show to users in the audience</td>
+    <td>list of modulels to show the users in the audience</td>
   </tr>
 </table>
 
@@ -85,7 +89,7 @@ var modules = {
   }]
 };
 
-var lyticsAcctId = "YOUR LYTICS ACCOUNT ID";
+var lyticsAcctId = 'YOUR LYTICS ACCOUNT ID';
 
 pathfora.initializeWidgets(modules, lyticsAcctId);
 ```
@@ -103,7 +107,7 @@ var newModule = pathfora.Message({
   headline: 'Welcome'
   msg: 'You must be new here! Please take a look at our guide for new users.'
   cancelShow: false,
-  okMessage: 'View Guide',
+  okMessage: 'View Guide'
 });
 
 var returningModule = pathfora.Message({
@@ -113,7 +117,7 @@ var returningModule = pathfora.Message({
   headline: 'Welcome Back'
   msg: 'Thanks for coming back, why not check out our blog for the newest updates?'
   cancelShow: false,
-  okMessage: 'View Blog',
+  okMessage: 'View Blog'
 });
 
 var modules = {
@@ -127,7 +131,7 @@ var modules = {
   }]
 };
 
-var lyticsAcctId = "YOUR LYTICS ACCOUNT ID";
+var lyticsAcctId = 'YOUR LYTICS ACCOUNT ID';
 
 pathfora.initializeWidgets(modules, lyticsAcctId);
 ```
@@ -136,17 +140,22 @@ pathfora.initializeWidgets(modules, lyticsAcctId);
 
 Target all users who are not a part of any of the audiences in the defined targeting rules.
 
+
 <table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+  
   <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
-  <tr>
-    <td>target</td>
+    <td>inverse</td>
     <td>array</td>
     <td>list of modules to show any user who is not a member of any of the audiences in the targeting rules</td>
   </tr>
+  <tr>
 </table>
 
 ``` javascript
@@ -163,8 +172,8 @@ var subscriptionModule = pathfora.Subscription({
 var feedbackModule = pathfora.Message({
   id: 'known_module',
   layout: 'modal',
-  headline: 'Give us Feedback'
-  msg: 'What do you think of our newest updates?'
+  headline: 'Give us Feedback',
+  msg: 'What do you think of our newest updates?',
   fields: {
     name: false,
     email: false,
@@ -181,7 +190,7 @@ var modules = {
   inverse: [ subscriptionModule ]
 };
 
-var lyticsAcctId = "YOUR LYTICS ACCOUNT ID";
+var lyticsAcctId = 'YOUR LYTICS ACCOUNT ID';
 
 pathfora.initializeWidgets(modules, lyticsAcctId);
 ```

@@ -1,23 +1,36 @@
-Pathfora supports A/B testing on a global level as well as on a targeted audience. You can select to split a pool of users to show some proportion of them a group of modules "A" and the other portion a group "B", (group being a collection of 0 or more modules).
+Pathfora supports A/B testing on a global level as well as on a targeted audience. You can split a pool of users to show some proportion of them a group of modules "A" and the other portion a group "B".
 
 
 ``` javascript
 var moduleTest = pathfora.ABTest({
-  // A/B test settings
+  id: 'ab-test-id',
+  type: '50/50',
+  groups: [
+    [ moduleA ],
+    [ ]
+  ]
 });
 
 pathfora.initializeABTesting([ moduleTest ]);
+pathfora.initializeWidgets([ moduleA ]);
 ```
 
+## ABTest
+
+Pathfora has a special configuration method for A/B Testing. This configuration is then used as a parameter for [initializeABTesting](/api/methods/#initializeabtesting).
+
 <table>
-  <tr>
-    <td colspan="3" align="center"><code>ABTest</code> settings object</td>
-  </tr>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>ABTest</code> settings object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
   <tr>
     <td>id</td>
     <td>string</td>
@@ -58,13 +71,13 @@ In the example below module "A" will be displayed to roughly half of the users i
 var moduleA = pathfora.Message({
   id: 'message-a',
   layout: 'slideout',
-  msg: 'Message A',
+  msg: 'Message A'
 });
 
 var moduleB = pathfora.Message({
   id: 'message-b',
   layout: 'slideout',
-  msg: 'Message B',
+  msg: 'Message B'
 });
 
 var ab = pathfora.ABTest({
@@ -83,10 +96,8 @@ var widgets = {
   }]
 };
 
-var lyticsAcctId = "0d47e6304d12858905b4f111090a68a1";
-
 pathfora.initializeABTesting([ ab ]);
-pathfora.initializeWidgets(widgets, lyticsAcctId);
+pathfora.initializeWidgets(widgets, 'YOUR LYTICS ACCOUNT ID');
 ```
 
 ## Testing

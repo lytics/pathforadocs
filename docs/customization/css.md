@@ -2,7 +2,7 @@ Pathfora is built to be entirely customizable for developers. With the javascrip
 
 ## Key Class Names
 
-The outer most `<div>` of all Pathfora modules have the `pf-widget` class. For most modules this will be the the containing div surrounding the content, but for [modal](/layouts/modal.md) and [gate](/types/gate.md) modules this div will contain the full-screen overlay behind the module. `pf-widget` has a number of useful subclasses to help select modules by their settings from the javascript config.
+The outer most `<div>` of all Pathfora modules have the `pf-widget` class. For most modules this will be the containing div surrounding the content, but for [modal](/layouts/modal.md) and [gate](/types/gate.md) modules this div will contain the full-screen overlay behind the module. `pf-widget` has a number of useful subclasses to help select modules by their settings from the javascript config.
 
 **Subclasses of `pf-widget`:**
 
@@ -13,7 +13,6 @@ The outer most `<div>` of all Pathfora modules have the `pf-widget` class. For m
 | `pf-position-[position]` | select modules by position |  
 | `pf-widget-variant-[variant]` | select modules by variant |
 | `opened` | added once the module becomes visiable to the user, can be used for changing the transition animation |
-
 
 Within the `pf-widget` div most key elements are assigned class names. Form components are nested in a `<form>` element and should be selected and styled by element type.
 
@@ -29,7 +28,9 @@ Within the `pf-widget` div most key elements are assigned class names. Form comp
 | `pf-widget-ok` | "Confirm" button |
 | `pf-widget-cancel` | "Cancel" button |
 | `pf-widget-img` | image element for modules of [variant 2](/layouts/modal.md#variant)
-| `pf-social-login` | div containing social login buttons for modules with [showSocialLogin](/types/form.md#showsociallogin) enabled | 
+| `pf-social-login` | div containing social login buttons for modules with [showSocialLogin](/types/form.md#showsociallogin) enabled |
+
+To see these classes in action, you can view the html [templates](https://github.com/lytics/pathforajs/tree/develop/src/templates) that will be rendered on your website. This is the html that gets minified, and added to a div with the class `pf-widget` that div then gets added to the DOM of your website.
 
 
 ## Custom Class Name
@@ -39,20 +40,20 @@ All modules use the `pf-widget` class, thus any styles applied to this class and
 ```javascript
 var module = pathfora.Subscription({
   id: 'form-css',
-  className: 'pf-sign-up-newsletter',
+  className: 'sign-up-newsletter',
   layout: 'modal',
   headline: 'Sign Up!',
   msg: 'Submit this form to get updates'
 });
 
-window.pathfora.initializeWidgets([ module ]);
+pathfora.initializeWidgets([ module ]);
 ```
 
 ## Example
 
 ### [Live Preview](../../examples/preview/customization/css/custom.html)
 
-![General Config](../examples/img/customization/css/custom.png)
+![Custom CSS](../examples/img/customization/css/custom.png)
 
 ### Javascript
 

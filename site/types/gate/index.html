@@ -65,6 +65,35 @@
           
             <li>
     <ul class="subnav">
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/methods/">Methods</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/acctid/">Lytics Account ID</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/config/">Generalized Configuration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
     <li><span>Types</span></li>
 
         
@@ -95,7 +124,9 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#sitegate-live-preview">SiteGate - Live Preview</a></li>
+                <li class="toctree-l3"><a href="#gate">Gate</a></li>
+                
+                    <li><a class="toctree-l4" href="#sitegate-live-preview">SiteGate - Live Preview</a></li>
                 
             
                 <li class="toctree-l3"><a href="#showsociallogin">showSocialLogin</a></li>
@@ -159,7 +190,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/buttons/">Buttons</a>
+        <a class="" href="../../customization/buttons/">Action Buttons</a>
         
     </li>
 
@@ -218,13 +249,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../../config/">Generalizing Config</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="../../tracking/">Tracking</a>
         
     </li>
@@ -266,70 +290,74 @@
           <div role="main">
             <div class="section">
               
-                <p>A more invasive approach to data collection or user identification. This type of module prevents users from viewing content or navigating until some sort of data has been collected and processed. Highly effective when promoting white papers or other online materials that are not to be freely available.</p>
+                <p>Gate modules provide an approach for requiring data collection or user identification. This type of module prevents users from viewing content or navigating until some sort of data has been collected and processed. These modules are highly effective when promoting white papers or other online materials that are not to be freely available.</p>
 <pre><code class="javascript">var module = pathfora.SiteGate({
-    // module settings
+  id: 'my-gate-module-id',
+  headline: 'My Headline Text',
+  msg: 'My message text here.'
 });
 
 pathfora.initializeWidgets([ module ]);
 </code></pre>
 
+<h2 id="gate">Gate</h2>
+<p>Gate modules will remain hidden once the user has submitted their information once. A cookie <code>PathforaUnlocked_[id of module]</code> is created to save this status so that the user has access to the gated content as long as their cookies persist.</p>
 <h3 id="sitegate-live-preview">SiteGate - <a href="../../../examples/preview/types/gate/gate.html">Live Preview</a></h3>
-<p><img alt="Site Gate" src="../../examples/img/types/gate/gate.png" /></p>
+<p><img alt="Gate Module" src="../../examples/img/types/gate/gate.png" /></p>
 <pre data-src="../../examples/src/types/gate/gate.js"></pre>
 
 <h2 id="showsociallogin">showSocialLogin</h2>
-<p>With social login enabled, a module can show Google or Facebook login buttons which the user can use to connect to their account. This will autofill the form elements with their account information such as name and email.</p>
+<p>With social login enabled, a module can show Google or Facebook login buttons which the user can use to connect to their account. This will autofill the form elements with their account information such as name and email. This setting requires authentication with <a href="../../api/methods/#integratewithfacebook">integrateWithFacebook</a> or <a href="../../api/methods/#integratewithgoogle">integrateWithGoogle</a>.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>false</td>
-<td>boolean</td>
-<td><code>default</code> do not show social login buttons</td>
-</tr>
-<tr>
-<td>true</td>
-<td>boolean</td>
-<td>show social login buttons</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>showSocialLogin</code> boolean</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>false</td>
+    <td><code>default</code> do not show social login buttons</td>
+  </tr>
+  <tr>
+    <td>true</td>
+    <td>show social login buttons</td>
+  </tr>
 </table>
+
 <h3 id="social-login-w-google-facebook-live-preview">Social Login /w Google &amp; Facebook - <a href="../../../examples/preview/types/gate/social.html">Live Preview</a></h3>
-<p><img alt="Site Gate" src="../../examples/img/types/gate/social.png" /></p>
+<p><img alt="Social Login Gate Module" src="../../examples/img/types/gate/social.png" /></p>
 <pre data-src="../../examples/src/types/gate/social.js"></pre>
 
 <h2 id="showform">showForm</h2>
 <p>By default the a gate module includes a form, with this setting it can be hidden for a text-only gated widget.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>true</td>
-<td>boolean</td>
-<td><code>default</code> show the gated form</td>
-</tr>
-<tr>
-<td>false</td>
-<td>boolean</td>
-<td>hide the form for a text-only gated widget</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>showForm</code> boolean</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>true</td>
+    <td><code>default</code> show the gated form</td>
+  </tr>
+  <tr>
+    <td>false</td>
+    <td>hide the form for a text-only gated widget</td>
+  </tr>
 </table>
+
 <h3 id="text-only-gate-live-preview">Text-only Gate - <a href="../../../examples/preview/types/gate/showForm.html">Live Preview</a></h3>
-<p><img alt="Site Gate" src="../../examples/img/types/gate/showForm.png" /></p>
+<p><img alt="Text Only Gate Module" src="../../examples/img/types/gate/showForm.png" /></p>
 <pre data-src="../../examples/src/types/gate/showForm.js"></pre>
               
             </div>
