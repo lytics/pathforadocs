@@ -65,6 +65,35 @@
           
             <li>
     <ul class="subnav">
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/methods/">Methods</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/acctid/">Lytics Account ID</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/config/">Generalized Configuration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
     <li><span>Types</span></li>
 
         
@@ -155,7 +184,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/buttons/">Buttons</a>
+        <a class="" href="../../customization/buttons/">Action Buttons</a>
         
     </li>
 
@@ -214,13 +243,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../../config/">Generalizing Config</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="../../tracking/">Tracking</a>
         
     </li>
@@ -262,9 +284,11 @@
           <div role="main">
             <div class="section">
               
-                <p>A lite version of the form type this module focuses on gathering the minimum amount of user data necessary to maintain communication. By default only email address will be collected.</p>
+                <p>Subscription modules are a lite version of the form type focused on gathering the minimum amount of user data necessary to maintain communication. By default only email address will be collected by a subscription module.</p>
 <pre><code class="javascript">var module = pathfora.Subscription({
-    // module settings
+  id: 'my-subscription-module-id',
+  headline: 'My Headline Text',
+  msg: 'My message text here.'
 });
 
 pathfora.initializeWidgets([ module ]);
@@ -273,41 +297,40 @@ pathfora.initializeWidgets([ module ]);
 <h2 id="layout">layout</h2>
 <p>Define which layout type the form module should use.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>modal</td>
-<td>string</td>
-<td>module uses a <a href="../../layouts/modal/">modal layout</a></td>
-</tr>
-<tr>
-<td>slideout</td>
-<td>string</td>
-<td>module uses a <a href="../../layouts/slideout/">slideout layout</a></td>
-</tr>
-<tr>
-<td>bar</td>
-<td>string</td>
-<td>module uses a <a href="../../layouts/bar/">bar layout</a></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>layout</code> string</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>modal</td>
+    <td>module uses a <a href="/layouts/modal">modal layout</a></td>
+  </tr>
+  <tr>
+    <td>slideout</td>
+    <td>module uses a <a href="/layouts/slideout">slideout layout</a></td>
+  </tr>
+  <tr>
+    <td>bar</td>
+    <td>module uses a <a href="/layouts/bar">bar layout</a></td>
+  </tr>
 </table>
+
 <h3 id="modal-live-preview">Modal - <a href="../../../examples/preview/types/subscription/modal.html">Live Preview</a></h3>
-<p><img alt="Subscription Modal" src="../../examples/img/types/subscription/modal.png" /></p>
+<p><img alt="Modal Subscription Module" src="../../examples/img/types/subscription/modal.png" /></p>
 <pre data-src="../../examples/src/types/subscription/modal.js"></pre>
 
 <h3 id="slideout-live-preview">Slideout - <a href="../../../examples/preview/types/subscription/slideout.html">Live Preview</a></h3>
-<p><img alt="Subscription Slideout" src="../../examples/img/types/subscription/slideout.png" /></p>
+<p><img alt="Slideout Subscription Module" src="../../examples/img/types/subscription/slideout.png" /></p>
 <pre data-src="../../examples/src/types/subscription/slideout.js"></pre>
 
 <h3 id="bar-live-preview">Bar - <a href="../../../examples/preview/types/subscription/bar.html">Live Preview</a></h3>
-<p><img alt="Subscription Bar" src="../../examples/img/types/subscription/bar.png" /></p>
+<p><img alt="Bar Subscription Module" src="../../examples/img/types/subscription/bar.png" /></p>
 <pre data-src="../../examples/src/types/subscription/bar.js"></pre>
               
             </div>

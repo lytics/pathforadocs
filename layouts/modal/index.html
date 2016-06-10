@@ -65,6 +65,35 @@
           
             <li>
     <ul class="subnav">
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/methods/">Methods</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/acctid/">Lytics Account ID</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/config/">Generalized Configuration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
     <li><span>Types</span></li>
 
         
@@ -112,7 +141,18 @@
             
                 <li class="toctree-l3"><a href="#variant">variant</a></li>
                 
-                    <li><a class="toctree-l4" href="#image-live-preview">Image - Live Preview</a></li>
+            
+                <li class="toctree-l3"><a href="#image">image</a></li>
+                
+                    <li><a class="toctree-l4" href="#image-variant-2-live-preview">Image (variant 2) - Live Preview</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#recommend">recommend</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#content">content</a></li>
+                
+                    <li><a class="toctree-l4" href="#content-recommendation-variant-3-live-preview">Content Recommendation (variant 3) - Live Preview</a></li>
                 
             
             </ul>
@@ -151,7 +191,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/buttons/">Buttons</a>
+        <a class="" href="../../customization/buttons/">Action Buttons</a>
         
     </li>
 
@@ -210,13 +250,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../../config/">Generalizing Config</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="../../tracking/">Tracking</a>
         
     </li>
@@ -260,36 +293,123 @@
               
                 <p>A large size module with an overlay behind it - meant to cover a substantial area of the browser window, so that it demands attention from the user.</p>
 <h2 id="variant">variant</h2>
-<p>Variants determines any extra content that may be used by the module.</p>
+<p>Variant determines any extra content (dictated by extra keys in the config) that may be used by the module.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>int</td>
-<td><code>default</code> text-only module</td>
-</tr>
-<tr>
-<td>2</td>
-<td>int</td>
-<td>module includes an image</td>
-</tr>
-<tr>
-<td>3</td>
-<td>int</td>
-<td>module includes a content recommendation</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>variant</code> int</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>1</td>
+    <td><code>default</code> text-only-module</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>module includes an image</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>module includes a content recommendation (this feature is in <strong>beta</strong>)</td>
+  </tr>
 </table>
-<h3 id="image-live-preview">Image - <a href="../../../examples/preview/layouts/modal/image.html">Live Preview</a></h3>
-<p><img alt="Image Slideout" src="../../examples/img/layouts/modal/image.png" /></p>
+
+<h2 id="image">image</h2>
+<p>Define the featured image you would like to use for the module.</p>
+<p><strong>Note:</strong> This setting is only valid for modules with a variant value of 2.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>image</td>
+    <td>string</td>
+    <td>URL of the image to feature</td>
+  </tr>
+</table>
+
+<h3 id="image-variant-2-live-preview">Image (variant 2) - <a href="../../../examples/preview/layouts/modal/image.html">Live Preview</a></h3>
+<p><img alt="Image Slideout Module" src="../../examples/img/layouts/modal/image.png" /></p>
 <pre data-src="../../examples/src/layouts/modal/image.js"></pre>
+
+<h2 id="recommend">recommend</h2>
+<p>Recommend controls any parameters necessary for making a content suggestions to a user using the Lytics content recommendation API. Your Lytics account ID must be present in the call to <a href="../../api/methods/#initializewidgets">initializeWidgets</a> for content recommendation modules.</p>
+<p><strong>Note:</strong> This setting is only valid for <a href="../../types/message/">message modules</a> with a variant value of 3.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>recommend</code> object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>ql</td>
+    <td>string</td>
+    <td>formatted query to filter based on url, topic or other content variables*</td>
+  </tr>
+</table>
+
+<p>*Currently Pathfora supports a <strong>beta</strong> version of content recommendation, that is, suggesting content on a user-level based on their content affinity. If you would like to try out this feature <em>please</em> contact your customer success representative <code>success@lytics.io</code> to help set this up.</p>
+<h2 id="content">content</h2>
+<p>Content acts as a backfill/helper for the <a href="#recommend">recommend key</a>. If the content recommendation API cannot return a recommendation for the user (if they don't have any content affinity data or an error occurs), a default document may be provided.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center">object in <code>content</code> array</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>url</td>
+    <td>string</td>
+    <td>url of the default document to recommend to the user</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>string</td>
+    <td>meta title of the default document</td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>string</td>
+    <td>meta description of the default document</td>
+  </tr>
+  <tr>
+    <td>image</td>
+    <td>string</td>
+    <td>url of the meta image of the default document</td>
+  </tr>
+  <tr>
+    <td>default</td>
+    <td>boolean</td>
+    <td><code>required</code> true if the content provided is to be used should the recommendation fail</td>
+  </tr>
+</table>
+
+<h3 id="content-recommendation-variant-3-live-preview">Content Recommendation (variant 3) - <a href="../../../examples/preview/layouts/modal/contentRecommend.html">Live Preview</a></h3>
+<p><strong>Note:</strong> The example will show the default content in this case since a valid account ID is not provided.</p>
+<p><img alt="Content Recommendation Modal Module" src="../../examples/img/layouts/modal/contentRecommend.png" /></p>
+<pre data-src="../../examples/src/layouts/modal/contentRecommend.js"></pre>
               
             </div>
           </div>

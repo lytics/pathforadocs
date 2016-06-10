@@ -68,18 +68,38 @@
                 <li class="toctree-l3"><a href="#overview">Overview</a></li>
                 
             
-                <li class="toctree-l3"><a href="#development">Development</a></li>
-                
-                    <li><a class="toctree-l4" href="#install-dependencies">Install Dependencies</a></li>
-                
-                    <li><a class="toctree-l4" href="#gulp-tasks">Gulp tasks</a></li>
-                
-                    <li><a class="toctree-l4" href="#testing">Testing</a></li>
-                
-            
             </ul>
         
     </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="api/methods/">Methods</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="api/acctid/">Lytics Account ID</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="api/config/">Generalized Configuration</a>
+        
+    </li>
+
+        
+    </ul>
 <li>
           
             <li>
@@ -161,7 +181,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="customization/buttons/">Buttons</a>
+        <a class="" href="customization/buttons/">Action Buttons</a>
         
     </li>
 
@@ -220,13 +240,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="config/">Generalizing Config</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="tracking/">Tracking</a>
         
     </li>
@@ -264,20 +277,26 @@
           <div role="main">
             <div class="section">
               
-                <p>Pathfora JS is a lightweight SDK for displaying personalized modules on your website. it integrates with your <a href="http://www.getlytics.com/">Lytics</a> account to track user actions, and conditionally display modules based on your users' audience memebership. This documentation will walk you through everything you need to create your own highly customized and personalized module. Code and live preview examples are provided along the way.</p>
+                <p>Pathfora JS is a lightweight SDK for displaying personalized modules on your website. It integrates with your <a href="http://www.getlytics.com/">Lytics</a> account to track user actions, and conditionally display modules based on your users' audience memebership. This documentation will walk you through everything you need to create your own highly customized and personalized module. Code and live preview examples are provided along the way.</p>
 <h2 id="getting-started">Getting Started</h2>
-<p>Before you begin creating modules with Pathfora you must have add the <a href="https://activate.getlytics.com/#/documentation/jstag_anon">Lytics Javascript Tag</a> to your website. The Pathfora tag must be loaded after the Lytics tag.</p>
+<p>Before you begin creating modules with Pathfora you must add the <a href="https://activate.getlytics.com/#/documentation/jstag_anon">Lytics javascript tag</a> to your website. If you are using <a href="#">Lytics Personalization</a> to power your modules, Pathfora will be automatcally loaded through your Lytics javascript tag. If you're creating a custom module, the Pathfora tag must be loaded after the Lytics tag.</p>
 <pre><code class="html">&lt;!-- Your Lytics JS Tag --&gt;
-&lt;script src=&quot;https://api.lytics.io/api/tag/{{YOUR LYTICS API KEY}}/lio.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://c.lytics.io/api/tag/YOUR LYTICS ACCOUNT ID/lio.js&quot;&gt;&lt;/script&gt;
 
 &lt;!-- Pathfora Tag --&gt;
 &lt;script src=&quot;http://c.lytics.io/static/pathfora.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 
-<p>Next you'll need to set up configuration for your module and initialize it with <code>pathfora.initializeWidgets</code> example configurations, what all these settings mean, and their outputted modules can be found throughout the documentation.</p>
+<p>Next you'll need to set up configuration for your module and initialize it with <code>initializeWidgets</code>. Example configurations, settings, and their outputted modules can be found throughout the documentation.</p>
 <h2 id="overview">Overview</h2>
 <p>Here are a couple sections to get you started on the basics of Pathfora JS. See the navigation in the sidebar for a full list of docs.</p>
 <ul>
+<li>
+<p><strong><a href="api/methods/">API Reference</a></strong> </p>
+<blockquote>
+<p>This section acts as a reference for Pathfora's top level functions which will use the module configs you create use to deploy modules on your website.</p>
+</blockquote>
+</li>
 <li>
 <p><strong><a href="types/message/">Types</a></strong> </p>
 <blockquote>
@@ -293,7 +312,7 @@
 <li>
 <p><strong><a href="targeting/">Audience Targeting</a></strong></p>
 <blockquote>
-<p>This section will walk you through how to make your modules truely personalized by targeting them to a specific subset of your users as defined by your Lytics audiences.</p>
+<p>This section will walk you through how to make your modules truly personalized by targeting them to a specific subset of your users as defined by your Lytics audiences.</p>
 </blockquote>
 </li>
 <li>
@@ -309,38 +328,6 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="development">Development</h2>
-<p>Pathfora uses <a href="https://docs.npmjs.com/">NPM</a> for package management, and <a href="https://github.com/gulpjs/gulp">Gulp</a> to manage build tasks.</p>
-<h3 id="install-dependencies">Install Dependencies</h3>
-<pre><code class="sh">$ npm install --global gulp-cli
-$ npm install
-</code></pre>
-
-<h3 id="gulp-tasks">Gulp tasks</h3>
-<p><strong><code>gulp build</code></strong></p>
-<blockquote>
-<p>Minify LESS files and uglify js files in the src directory, and place output in dist directory.</p>
-</blockquote>
-<p><strong><code>gulp</code></strong></p>
-<blockquote>
-<p>Runs the <code>build</code> tasks above and watches for any changes in the src directory, files are served on localhost port 8080</p>
-</blockquote>
-<p><strong><code>gulp local</code></strong></p>
-<blockquote>
-<p>Reads some config params from an optional local file, <code>.env.json</code> and builds and watches as with the default gulp task. This can allow you to test CSS changes locally (by default <code>dist/pathfora.min.js</code> loads the most recently deployed CSS file) or override the Lytics API URL</p>
-</blockquote>
-<p>Example <code>.env.json</code> file, (using local CSS):</p>
-<pre><code class="json">{
-  &quot;APIURL&quot;: &quot;https://api.lytics.io&quot;,
-  &quot;CSSURL&quot;: &quot;http://localhost:8080/dist/pathfora.min.css&quot;
-}
-</code></pre>
-
-<h3 id="testing">Testing</h3>
-<p>Pathfora uses <a href="https://github.com/jasmine/jasmine">Jasmine</a> as a test framework, and <a href="https://github.com/karma-runner/karma/">Karma</a> to run tests. Before running tests, or commiting changes be sure to run <code>gulp build</code> instead of <code>gulp local</code>, or tests will fail due to mismatching URLs.</p>
-<p>Running Tests:</p>
-<pre><code class="sh">$ gulp build &amp;&amp; karma start --single-run --browsers PhantomJS
-</code></pre>
               
             </div>
           </div>
@@ -348,7 +335,7 @@ $ npm install
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="types/message/" class="btn btn-neutral float-right" title="Message">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="api/methods/" class="btn btn-neutral float-right" title="Methods">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -376,7 +363,7 @@ $ npm install
       
       
       
-        <span style="margin-left: 15px"><a href="types/message/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="api/methods/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -386,5 +373,5 @@ $ npm install
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-06-09 00:41:45.811818
+Build Date UTC : 2016-06-10 23:50:34.069206
 -->

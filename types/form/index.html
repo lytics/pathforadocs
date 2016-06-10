@@ -65,6 +65,35 @@
           
             <li>
     <ul class="subnav">
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/methods/">Methods</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/acctid/">Lytics Account ID</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/config/">Generalized Configuration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
     <li><span>Types</span></li>
 
         
@@ -158,7 +187,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/buttons/">Buttons</a>
+        <a class="" href="../../customization/buttons/">Action Buttons</a>
         
     </li>
 
@@ -217,13 +246,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../../config/">Generalizing Config</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="../../tracking/">Tracking</a>
         
     </li>
@@ -265,9 +287,11 @@
           <div role="main">
             <div class="section">
               
-                <p>Used primarily for data collection or user identification. Supporting a variety of form fields and options for passing data to various end-points this type presents a form for the user to fill out and submit.</p>
+                <p>Form type modules are used primarily for data collection or user identification. Supporting a variety of form fields and options for passing data to various end-points, this type presents a form for the user to fill out and submit.</p>
 <pre><code class="javascript">var module = pathfora.Form({
-    // form module settings
+  id: 'my-form-module-id',
+  headline: 'My Headline Text',
+  msg: 'My message text here.'
 });
 
 pathfora.initializeWidgets([ module ]);
@@ -276,59 +300,59 @@ pathfora.initializeWidgets([ module ]);
 <h2 id="layout">layout</h2>
 <p>Define which layout type the form module should use.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>modal</td>
-<td>string</td>
-<td>module uses a <a href="../../layouts/modal/">modal layout</a></td>
-</tr>
-<tr>
-<td>slideout</td>
-<td>string</td>
-<td>module uses a <a href="../../layouts/slideout/">slideout layout</a></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>layout</code> string</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>modal</td>
+    <td>module uses a <a href="/layouts/modal">modal layout</a></td>
+  </tr>
+  <tr>
+    <td>slideout</td>
+    <td>module uses a <a href="/layouts/slideout">slideout layout</a></td>
+  </tr>
 </table>
+
 <h3 id="form-live-preview">Form - <a href="../../../examples/preview/types/form/modal.html">Live Preview</a></h3>
-<p><img alt="Form Modal" src="../../examples/img/types/form/modal.png" /></p>
+<p><img alt="Modal Form Module" src="../../examples/img/types/form/modal.png" /></p>
 <pre data-src="../../examples/src/types/form/modal.js"></pre>
 
 <h3 id="slideout-live-preview">Slideout - <a href="../../../examples/preview/types/form/slideout.html">Live Preview</a></h3>
-<p><img alt="Form Slideout" src="../../examples/img/types/form/slideout.png" /></p>
+<p><img alt="Slideout Form Module" src="../../examples/img/types/form/slideout.png" /></p>
 <pre data-src="../../examples/src/types/form/slideout.js"></pre>
 
 <h2 id="showsociallogin">showSocialLogin</h2>
-<p>With social login enabled, a module can show Google or Facebook login buttons which the user can use to connect to their account. This will autofill the form elements with their account information such as name and email.</p>
+<p>With social login enabled, a module can show Google or Facebook login buttons which the user can use to connect to their account. This will autofill the form elements with their account information such as name and email. This setting requires authentication with <a href="../../api/methods/#integratewithfacebook">integrateWithFacebook</a> or <a href="../../api/methods/#integratewithgoogle">integrateWithGoogle</a>.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>false</td>
-<td>boolean</td>
-<td><code>default</code> do not show social login buttons</td>
-</tr>
-<tr>
-<td>true</td>
-<td>boolean</td>
-<td>show social login buttons</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>showSocialLogin</code> boolean</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>false</td>
+    <td><code>default</code> do not show social login buttons</td>
+  </tr>
+  <tr>
+    <td>true</td>
+    <td>show social login buttons</td>
+  </tr>
 </table>
+
 <h3 id="social-login-w-google-facebook-live-preview">Social Login /w Google &amp; Facebook - <a href="../../../examples/preview/types/form/social.html">Live Preview</a></h3>
-<p><img alt="Social Login Form" src="../../examples/img/types/form/social.png" /></p>
+<p><img alt="Social Login Form Module" src="../../examples/img/types/form/social.png" /></p>
 <pre data-src="../../examples/src/types/form/social.js"></pre>
               
             </div>

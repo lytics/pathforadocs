@@ -65,6 +65,35 @@
           
             <li>
     <ul class="subnav">
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../api/methods/">Methods</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../api/acctid/">Lytics Account ID</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../api/config/">Generalized Configuration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
     <li><span>Types</span></li>
 
         
@@ -142,7 +171,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../customization/buttons/">Buttons</a>
+        <a class="" href="../customization/buttons/">Action Buttons</a>
         
     </li>
 
@@ -235,13 +264,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../config/">Generalizing Config</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="../tracking/">Tracking</a>
         
     </li>
@@ -279,37 +301,43 @@
           <div role="main">
             <div class="section">
               
-                <p>The <code>displayConditions</code> key controls how, when, and for how long any single module is displayed/hidden. All options can be combined with one-another for maximum control. Each module requires its own set of <code>displayConditions</code>. By default all modules will leverage <code>showOnInit</code>. Upon configuring another options this init based display is automatically disabled unless explicitly defined again in the module config.</p>
+                <p>The <code>displayConditions</code> key controls how, when, and for how long any single module is displayed/hidden. All options can be combined with one-another for maximum control. Each module requires its own set of <code>displayConditions</code>. By default all modules will leverage <code>showOnInit</code>. Once other display conditions are set, they will override this default.</p>
 <pre><code class="javascript">var module = pathfora.Message({
   displayConditions: {
-    // display conditions here
+    showDelay: 10,
+    impressions: {
+      session: 2
+    }
   }
 });
+
+pathfora.initializeWidgets([ module ]);
 </code></pre>
 
+<p>Some display conditions may require that cookies be enabled to work properly.</p>
 <h2 id="showoninit">showOnInit</h2>
 <p>Determines if the rendered module is displayed as soon as it is initialized or waits for another event.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>true</td>
-<td>bool</td>
-<td><code>default</code> module will be displayed as soon as it has been loaded</td>
-</tr>
-<tr>
-<td>false</td>
-<td>bool</td>
-<td>module will be added to DOM but not displayed until another trigger instructs it to</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>showOnInit</code> boolean</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>true</td>
+    <td><code>default</code> module will be displayed as soon as it has been loaded</td>
+  </tr>
+  <tr>
+    <td>false</td>
+    <td>module will be added to DOM but not displayed until another trigger instructs it to</td>
+  </tr>
 </table>
+
 <pre><code class="javascript">// example: loads immediately after initializing the module
 
 displayConditions: {
@@ -320,26 +348,26 @@ displayConditions: {
 <h2 id="showdelay">showDelay</h2>
 <p>Adds a delay, in seconds, that must be completed before module is loaded.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>int</td>
-<td><code>default</code> using 0 disables the showDelay property and will show immediately</td>
-</tr>
-<tr>
-<td>0 - ∞</td>
-<td>int</td>
-<td>module will be displayed after waiting x seconds after initialization</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>showDelay</code> int</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>0</td>
+    <td><code>default</code> using 0 disables the showDelay property and will show immediately</td>
+  </tr>
+  <tr>
+    <td>0 – ∞</td>
+    <td>module will be displayed after waiting x seconds after initialization</td>
+  </tr>
 </table>
+
 <pre><code class="javascript">// example: loads after a 10 second delay
 
 displayConditions: {
@@ -350,26 +378,26 @@ displayConditions: {
 <h2 id="hideafter">hideAfter</h2>
 <p>Adds a countdown, in seconds, that must hides module on expiration.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>int</td>
-<td><code>default</code> using 0 disables the showDelay property and will not be hidden</td>
-</tr>
-<tr>
-<td>0 - ∞</td>
-<td>int</td>
-<td>module will hidden from screen after x seconds have passed</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>hideAfter</code> int</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>0</td>
+    <td><code>default</code> using 0 disables the showDelay property and will not be hidden</td>
+  </tr>
+  <tr>
+    <td>0 – ∞</td>
+    <td>module will hidden from screen after x seconds have passed</td>
+  </tr>
 </table>
+
 <pre><code class="javascript">// example: hide module after 10 seconds
 
 displayConditions: {
@@ -380,51 +408,51 @@ displayConditions: {
 <h2 id="displaywhenelementvisible">displayWhenElementVisible</h2>
 <p>Triggers the module when a specific DOM element enters the viewport.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>element id</td>
-<td>string</td>
-<td>waits for an element with specific id to enter the viewport</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>displayWhenElementVisible</td>
+    <td>string</td>
+    <td>selector for the element which when visible will trigger the module</td>
+  </tr>
 </table>
-<pre><code class="javascript">// example: show module when the #footer is visible
+
+<pre><code class="javascript">// example: show module when the .footer is visible
 
 displayConditions: {
-  displayWhenElementVisible: &quot;#footer&quot;
+  displayWhenElementVisible: '.footer'
 }
 </code></pre>
 
 <h2 id="scrollpercentagetodisplay">scrollPercentageToDisplay</h2>
 <p>Triggers the modal after a percentage of the page scroll has been performed.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>int</td>
-<td><code>default</code> using 0 disables the property and will show immediately</td>
-</tr>
-<tr>
-<td>0 - 100</td>
-<td>int</td>
-<td>module will hidden until x percent of total scroll has been performed</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>scrollPercentageToDisplay</code> int</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>0</td>
+    <td><code>default</code> using 0 disables the property and will show immediately</td>
+  </tr>
+  <tr>
+    <td>0 – 100</td>
+    <td>module will hidden until x percent of total scroll has been performed</td>
+  </tr>
 </table>
+
 <pre><code class="javascript">// example: show module when the 50 percent of the page scroll has been completed
 
 displayConditions: {
@@ -433,28 +461,28 @@ displayConditions: {
 </code></pre>
 
 <h2 id="pagevisits">pageVisits</h2>
-<p>Triggers the module when the user visits the page a certain amount of times (total saved in cookie).</p>
+<p>Triggers the module when the user visits the page a certain amount of times. The total number of page visits is saved in cookie <code>PathforaPageView</code> to compare against this value.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>int</td>
-<td><code>default</code> using 0 disables the property and will show on all visits</td>
-</tr>
-<tr>
-<td>0 - ∞</td>
-<td>int</td>
-<td>module will show only when visits &gt; x</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>pageVisits</code> int</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>0</td>
+    <td><code>default</code> using 0 disables the property and will show on all visits</td>
+  </tr>
+  <tr>
+    <td>0 – ∞</td>
+    <td>module will show only when the user has visited more than x times</td>
+  </tr>
 </table>
+
 <pre><code class="javascript">// example: show module after they have visited at least 3 times
 
 displayConditions: {
@@ -465,36 +493,26 @@ displayConditions: {
 <h2 id="date">date</h2>
 <p>Display the module in a specified interval of time.</p>
 <table>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
-  <tr>
-    <td>date</td>
-    <td>obj</td>
-    <td>must be object formatted using following options / values</td>
-  </tr>
-</table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>date</code> object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
 
-<table>
   <tr>
-    <td colspan="3" align="center"><code>date</code> object</td>
-  </tr>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
-  <tr>
-    <td> start_at </td>
+    <td>start_at</td>
     <td>string</td>
-    <td><code>optional</code> valid date string <code>2016-02-15T11:00:00.000Z</code> for date to start showing module</td>
+    <td><code>optional</code> valid ISO 8601 formatted date for date to start showing module</td>
   </tr>
   <tr>
-    <td> end_at </td>
+    <td>end_at</td>
     <td>string</td>
-    <td><code>optional</code> valid date string <code>2016-02-15T11:00:00.000Z</code> for date to stop showing module</td>
+    <td><code>optional</code> valid ISO 8601 formatted date for date to stop showing module</td>
   </tr>
 </table>
 
@@ -502,7 +520,7 @@ displayConditions: {
 
 displayConditions: {
   date: {
-    start_at: &quot;2017-02-12T11:00:00.000Z&quot;
+    start_at: '2017-02-12T11:00:00.000Z'
   }
 }
 </code></pre>
@@ -511,7 +529,7 @@ displayConditions: {
 
 displayConditions: {
   date: {
-    end_at: &quot;2017-02-12T11:00:00.000Z&quot;
+    end_at: '2017-02-12T11:00:00.000Z'
   }
 }
 </code></pre>
@@ -520,45 +538,35 @@ displayConditions: {
 
 displayConditions: {
   date: {
-    start_at: &quot;2017-02-12T11:00:00.000Z&quot;,
-    end_at: &quot;2017-03-12T11:00:00.000Z&quot;
+    start_at: '2017-02-12T11:00:00.000Z',
+    end_at: '2017-03-12T11:00:00.000Z'
   }
 }
 </code></pre>
 
 <h2 id="impressions">impressions</h2>
-<p>Hide the module after a certain number of impressions</p>
+<p>Hide the module after a certain number of impressions. The current number of impressions is saved in a cookie <code>PathforaImpressions_[module id]</code> to compare against this value.</p>
 <table>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
-  <tr>
-    <td>impressions</td>
-    <td>obj</td>
-    <td>must be object formatted using following options / values</td>
-  </tr>
-</table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>impressions</code> object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
 
-<table>
   <tr>
-    <td colspan="3" align="center"><code>date</code> object</td>
-  </tr>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
-  <tr>
-    <td> session </td>
+    <td>session</td>
     <td>int</td>
-    <td><code>optional</code> integer count of how many session-based impressions before showing the module</td>
+    <td><code>optional</code> count of how many session-based impressions before showing the module</td>
   </tr>
   <tr>
-    <td> total </td>
+    <td>total</td>
     <td>int</td>
-    <td><code>optional</code> integer count of how many total (multisession) impressions before showing the module</td>
+    <td><code>optional</code> count of how many total (multisession) impressions before showing the module</td>
   </tr>
 </table>
 
@@ -592,38 +600,57 @@ displayConditions: {
 </code></pre>
 
 <h2 id="hideafteraction">hideAfterAction</h2>
-<p>Hide the module after a particular action has been taken (<code>closed, confirm, cancel</code>)</p>
+<p>Hide the module after a particular action has been taken (<code>closed</code>, <code>cancel</code>, or <code>confirm</code>). The current number of impressions is saved in a cookie <code>Pathfora[action]_[module id]</code> to compare against this value.</p>
 <table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>hideAfterAction</code> object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
   <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
+    <td>closed</td>
+    <td>object</td>
+    <td><code>optional</code> settings for hiding the module based on the close action</td>
   </tr>
   <tr>
-    <td>hideAfterAction</td>
-    <td>obj</td>
-    <td>must be object formatted using following options / values</td>
+    <td>cancel</td>
+    <td>object</td>
+    <td><code>optional</code> settings for hiding the module based on the cancel button click action</td>
+  </tr>
+  <tr>
+    <td>confirm</td>
+    <td>object</td>
+    <td><code>optional</code> settings for hiding the module based on the confirm button action</td>
   </tr>
 </table>
 
 <table>
-  <tr>
-    <td colspan="3" align="center"><code>closed</code> / <code>confirm</code> / <code>cancel</code> object</td>
-  </tr>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>closed</code> / <code>confirm</code> / <code>cancel</code> object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
   <tr>
     <td>hideCount</td>
     <td>int</td>
-    <td><code>optional</code> integer count of times module has been closed manually by user</td>
+    <td><code>optional</code> count of times module has been closed manually by user before hiding the module</td>
   </tr>
   <tr>
     <td>duration</td>
     <td>int</td>
-    <td><code>optional</code> integer representing how long the module should be hidden in seconds</td>
+    <td><code>optional</code> how long the module should be hidden in seconds</td>
   </tr>
 </table>
 
@@ -633,7 +660,7 @@ displayConditions: {
   hideAfterAction: {
     closed: {
       hideCount: 5,
-      duration: 360
+      duration: 60 * 6
     }
   }
 }
@@ -656,7 +683,7 @@ displayConditions: {
   hideAfterAction: {
     cancel: {
       hideCount: 1,
-      duration: 604800
+      duration: 60 * 60 * 24 * 7
     }
   }
 }
@@ -668,14 +695,14 @@ displayConditions: {
   hideAfterAction: {
     cancel: {
       hideCount: 1,
-      duration: 604800
+      duration: 60 * 60 * 24 * 7
     },
     confirm: {
       hideCount: 1
     },
     closed: {
       hideCount: 5,
-      duration: 360
+      duration: 60 * 6
     }
   }
 }
@@ -684,27 +711,17 @@ displayConditions: {
 <h2 id="urlcontains">urlContains</h2>
 <p>Only display the module on pages that match the url conditions defined.</p>
 <table>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
-  <tr>
-    <td>urlContains</td>
-    <td>array</td>
-    <td>must be an array of objects formatted using following options / values</td>
-  </tr>
-</table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center">object in <code>urlContains</code> array</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
 
-<table>
-  <tr>
-    <td colspan="3" align="center">object in <code>urlContains</code> array</td>
-  </tr>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
   <tr>
     <td>match</td>
     <td>string</td>
@@ -718,14 +735,17 @@ displayConditions: {
 </table>
 
 <table>
-  <tr>
-    <td colspan="3" align="center"><code>match</code> string</td>
-  </tr>
-  <tr>
-    <th>VALUE</th>
-    <th>TYPE</th>
-    <th>BEHAVIOR</th>
-  </tr>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>match</code> string</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
   <tr>
     <td>simple</td>
     <td>string</td>
@@ -838,7 +858,7 @@ displayConditions: {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../config/" class="btn btn-neutral float-right" title="Generalizing Config">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tracking/" class="btn btn-neutral float-right" title="Tracking">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../callbacks/" class="btn btn-neutral" title="Callbacks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -870,7 +890,7 @@ displayConditions: {
         <span><a href="../callbacks/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../config/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../tracking/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
