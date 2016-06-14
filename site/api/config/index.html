@@ -90,8 +90,6 @@
             
                 <li class="toctree-l3"><a href="#example">Example</a></li>
                 
-                    <li><a class="toctree-l4" href="#live-preview">Live Preview</a></li>
-                
             
             </ul>
         
@@ -280,7 +278,7 @@
           <div role="main">
             <div class="section">
               
-                <p>For multiple modules with common elements we can define a configuration to apply to all modules, or all modules of a certain type. Maintaining a common config helps reduce the code repitition and allows you to change settings accross many widgets in one place. A config object can be passed as third, optional argument to <a href="../methods/#initializewidgets">initializeWidgets</a>.</p>
+                <p>For multiple modules with common elements we can define a configuration to apply to all modules, or all modules of a certain type. Maintaining a common config helps reduce the code repitition and allows you to change settings accross many widgets in one place. A config object can be passed as a third, optional argument to <a href="../methods/#initializewidgets">initializeWidgets</a>.</p>
 <pre><code class="javascript">var config = {
   generic: {
     theme: dark
@@ -330,7 +328,8 @@ pathfora.initializeWidgets([ module, module2 ], '', config);
  </table>
 
 <h2 id="example">Example</h2>
-<h3 id="live-preview"><a href="../../examples/preview/config/config.html">Live Preview</a></h3>
+<h3><a href="../../examples/preview/config/config.html" target="_blank">Live Preview</a></h3>
+
 <p><img alt="General Config" src="../../examples/img/config/config.png" /></p>
 <pre data-src="../../examples/src/config/config.js"></pre>
               
