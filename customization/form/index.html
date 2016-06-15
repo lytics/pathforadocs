@@ -210,6 +210,13 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../responsive/">Responsive Styles</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -286,7 +293,7 @@
               
                 <p>Pathfora allows for some customization on form elements including hiding specific input fields, setting placeholder text, and selecting which fields are required for the user to submit the form.</p>
 <h2 id="fields">fields</h2>
-<p>Select which fields should be a part of the module's form. By default, all available fields for </p>
+<p>Select which fields should be a part of the module's form. By default, a <a href="../../types/form/">form</a> module has the name, email, title, and message fields. And a <a href="../../types/form/">gate</a> module has the name, email, company, and title fields. </p>
 <table>
   <thead>
     <tr>
@@ -302,27 +309,32 @@
   <tr>
     <td>name</td>
     <td>boolean</td>
-    <td><code>optional</code> supported types: form, gate</td>
-  </tr>
-  <tr>
-    <td>title</td>
-    <td>boolean</td>
-    <td><code>optional</code> supported types: form, gate</td>
+    <td><code>optional</code> show or hide input for the user's full name</td>
   </tr>
   <tr>
     <td>email</td>
     <td>boolean</td>
-    <td><code>optional</code> supported types: form, gate</td>
+    <td><code>optional</code> show or hide input for the user's email address</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide input for the user's job title</td>
+  </tr>
+  <tr>
+    <td>company</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide input for the user's company of employment</td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide input for the user's phone number</td>
   </tr>
   <tr>
     <td>message</td>
     <td>boolean</td>
-    <td><code>optional</code> supported types: form</td>
-  </tr>
-  <tr>
-    <td>organization</td>
-    <td>boolean</td>
-    <td><code>optional</code> supported types: gate</td>
+    <td><code>optional</code> show or hide texarea field for comments or a longer form message</td>
   </tr>
 </table>
 
@@ -332,7 +344,7 @@
 <pre data-src="../../examples/src/customization/form/fields.js"></pre>
 
 <h2 id="required">required</h2>
-<p>Set which fields are required to be filled out by the user to submit the form.</p>
+<p>Set which fields are required to be filled out by the user to submit the form. By default only name and email fields are required for all modules with forms.</p>
 <table>
   <thead>
     <tr>
@@ -348,27 +360,32 @@
   <tr>
     <td>name</td>
     <td>boolean</td>
-    <td><code>optional</code> supported types: form, gate</td>
-  </tr>
-  <tr>
-    <td>title</td>
-    <td>boolean</td>
-    <td><code>optional</code> supported types: form, gate</td>
+    <td><code>optional</code> set the required status for the name field</td>
   </tr>
   <tr>
     <td>email</td>
     <td>boolean</td>
-    <td><code>optional</code> supported types: form, gate</td>
+    <td><code>optional</code> set the required status for the email address field</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the job title field</td>
+  </tr>
+  <tr>
+    <td>company</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the company of employment field</td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the phone number field</td>
   </tr>
   <tr>
     <td>message</td>
     <td>boolean</td>
-    <td><code>optional</code> supported types: form</td>
-  </tr>
-  <tr>
-    <td>organization</td>
-    <td>boolean</td>
-    <td><code>optional</code> supported types: gate</td>
+    <td><code>optional</code> set the required status for the long form message field</td>
   </tr>
 </table>
 
@@ -394,27 +411,32 @@
   <tr>
     <td>name</td>
     <td>string</td>
-    <td><code>optional</code> supported types: form, gate</td>
-  </tr>
-  <tr>
-    <td>title</td>
-    <td>string</td>
-    <td><code>optional</code> supported types: form, gate</td>
+    <td><code>optional</code> set the placeholder text for the name field</td>
   </tr>
   <tr>
     <td>email</td>
     <td>string</td>
-    <td><code>optional</code> supported types: form, gate</td>
+    <td><code>optional</code> set the placeholder text for the email address field</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the job title field</td>
+  </tr>
+  <tr>
+    <td>company</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the company of employment field</td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the phone number field</td>
   </tr>
   <tr>
     <td>message</td>
     <td>string</td>
-    <td><code>optional</code> supported types: form</td>
-  </tr>
-  <tr>
-    <td>organization</td>
-    <td>string</td>
-    <td><code>optional</code> supported types: gate</td>
+    <td><code>optional</code> set the placeholder text for the long form message field</td>
   </tr>
 </table>
 
@@ -429,7 +451,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../ab_testing/" class="btn btn-neutral float-right" title="A/B Testing">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../responsive/" class="btn btn-neutral float-right" title="Responsive Styles">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../css/" class="btn btn-neutral" title="Custom CSS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -461,7 +483,7 @@
         <span><a href="../css/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../ab_testing/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../responsive/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
