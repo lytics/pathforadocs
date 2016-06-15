@@ -8,7 +8,7 @@
   
   
   
-  <title>Gate - PathforaJS SDK</title>
+  <title>Responsive Styles - PathforaJS SDK</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -24,9 +24,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Gate";
-    var mkdocs_page_input_path = "types/gate.md";
-    var mkdocs_page_url = "/types/gate/";
+    var mkdocs_page_name = "Responsive Styles";
+    var mkdocs_page_input_path = "customization/responsive.md";
+    var mkdocs_page_url = "/customization/responsive/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -99,41 +99,28 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../message/">Message</a>
+        <a class="" href="../../types/message/">Message</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../form/">Form</a>
+        <a class="" href="../../types/form/">Form</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../subscription/">Subscription</a>
+        <a class="" href="../../types/subscription/">Subscription</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Gate</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#gate">Gate</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#showsociallogin">showSocialLogin</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#showform">showForm</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/gate/">Gate</a>
         
     </li>
 
@@ -184,35 +171,42 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/buttons/">Action Buttons</a>
+        <a class="" href="../buttons/">Action Buttons</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/themes/">Color Themes</a>
+        <a class="" href="../themes/">Color Themes</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/css/">Custom CSS</a>
+        <a class="" href="../css/">Custom CSS</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/form/">Form Elements</a>
+        <a class="" href="../form/">Form Elements</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/responsive/">Responsive Styles</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Responsive Styles</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#responsive">responsive</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -277,11 +271,11 @@
     
       
         
-          <li>Types &raquo;</li>
+          <li>Customization &raquo;</li>
         
       
     
-    <li>Gate</li>
+    <li>Responsive Styles</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -291,57 +285,13 @@
           <div role="main">
             <div class="section">
               
-                <p>Gate modules provide an approach for requiring data collection or user identification. This type of module prevents users from viewing content or navigating until some sort of data has been collected and processed. These modules are highly effective when promoting white papers or other online materials that are not to be freely available.</p>
-<pre><code class="javascript">var module = pathfora.SiteGate({
-  id: 'my-gate-module-id',
-  headline: 'My Headline Text',
-  msg: 'My message text here.'
-});
-
-pathfora.initializeWidgets([ module ]);
-</code></pre>
-
-<h2 id="gate">Gate</h2>
-<p>Gate modules will remain hidden once the user has submitted their information once. A cookie <code>PathforaUnlocked_[id of module]</code> is created to save this status so that the user has access to the gated content as long as their cookies persist.</p>
-<h3>SiteGate - <a href="../../examples/preview/types/gate/gate.html" target="_blank">Live Preview</a></h3>
-
-<p><img alt="Gate Module" src="../../examples/img/types/gate/gate.png" /></p>
-<pre data-src="../../examples/src/types/gate/gate.js"></pre>
-
-<h2 id="showsociallogin">showSocialLogin</h2>
-<p>With social login enabled, a module can show Google or Facebook login buttons which the user can use to connect to their account. This will autofill the form elements with their account information such as name and email. This setting requires authentication with <a href="../../api/methods/#integratewithfacebook">integrateWithFacebook</a> or <a href="../../api/methods/#integratewithgoogle">integrateWithGoogle</a>.</p>
+                <p>By default, all Pathfora modules have a responsive design which will scale for screen size and device. Larger modules, such as <a href="../../types/gate/">gate</a> or <a href="../../layouts/modal/">modals</a> will likely take up the full screen space on a mobile device. Smaller modules such as <a href="../../layouts/bar/">bar</a> and <a href="../../layouts/slideout/">slideout</a> will fit completely within a mobile screen if the content is short enough, and scroll otherwise. The responsive behavior can be turned off if you would not like to show your modules on smaller screen sizes.</p>
+<h2 id="responsive">responsive</h2>
+<p>Turn on or off responsive styles for windows of certain dimensions.</p>
 <table>
   <thead>
     <tr>
-      <td colspan="2" align="center"><code>showSocialLogin</code> boolean</td>
-    </tr>
-    <tr>
-      <th>Value</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>false</td>
-    <td><code>default</code> do not show social login buttons</td>
-  </tr>
-  <tr>
-    <td>true</td>
-    <td>show social login buttons</td>
-  </tr>
-</table>
-
-<h3>Social Login /w Google &amp; Facebook - <a href="../../examples/preview/types/gate/social.html" target="_blank">Live Preview</a></h3>
-
-<p><img alt="Social Login Gate Module" src="../../examples/img/types/gate/social.png" /></p>
-<pre data-src="../../examples/src/types/gate/social.js"></pre>
-
-<h2 id="showform">showForm</h2>
-<p>By default the a gate module includes a form, with this setting it can be hidden for a text-only gated widget.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="2" align="center"><code>showForm</code> boolean</td>
+      <td colspan="2" align="center"><code>responsive</code> boolean</td>
     </tr>
     <tr>
       <th>Value</th>
@@ -351,18 +301,13 @@ pathfora.initializeWidgets([ module ]);
 
   <tr>
     <td>true</td>
-    <td><code>default</code> show the gated form</td>
+    <td><code>default</code> modules will scale for any browser size</td>
   </tr>
   <tr>
     <td>false</td>
-    <td>hide the form for a text-only gated widget</td>
+    <td>modules will be hidden for windows less than 768px in width or less than 640px in height</td>
   </tr>
 </table>
-
-<h3>Text-only Gate - <a href="../../examples/preview/types/gate/showForm.html" target="_blank">Live Preview</a></h3>
-
-<p><img alt="Text Only Gate Module" src="../../examples/img/types/gate/showForm.png" /></p>
-<pre data-src="../../examples/src/types/gate/showForm.js"></pre>
               
             </div>
           </div>
@@ -370,10 +315,10 @@ pathfora.initializeWidgets([ module ]);
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../layouts/modal/" class="btn btn-neutral float-right" title="Modal">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../ab_testing/" class="btn btn-neutral float-right" title="A/B Testing">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../subscription/" class="btn btn-neutral" title="Subscription"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../form/" class="btn btn-neutral" title="Form Elements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -399,10 +344,10 @@ pathfora.initializeWidgets([ module ]);
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../subscription/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../form/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../layouts/modal/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../ab_testing/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
