@@ -291,7 +291,7 @@
           <div role="main">
             <div class="section">
               
-                <p>Pathfora gains power by seamlessly integrating with <a href="http://www.getlytics.com/">Lytics</a> for real-time user identification. This allows for precise audience targeting with each module. Setting this up in Pathfora requires an object with certain targeting rules as the first param to <a href="../api/methods/#initializewidgets">initializeWidgets</a> and your Lytics Account ID as a second parameter.</p>
+                <p>Pathfora gains power by seamlessly integrating with <a href="http://www.getlytics.com/">Lytics</a> for real-time user identification. This allows for precise audience targeting with each module. Setting this up in Pathfora requires an object with certain targeting rules as the first parameter to <a href="../api/methods/#initializewidgets">initializeWidgets</a> and your Lytics Account ID as a second parameter.</p>
 <pre><code class="javascript">var modules = {
   target: [{
     segment: 'smt_name',
@@ -303,7 +303,7 @@ pathfora.initializeWidgets(modules, 'YOUR LYTICS ACCOUNT ID');
 </code></pre>
 
 <h2 id="setup-your-audiences">Setup Your Audiences</h2>
-<p>You'll need to have at least one audience built in Lytics that you want to target with a module. Make sure that you have API access enabled for the audience, and have entered an ID, you will use this id in the targeting rules.</p>
+<p>You will need to have at least one audience built in Lytics that you want to target with a module. Make sure that you have API access enabled for the audience, and have entered an ID. You will use this id in the targeting rules.</p>
 <p><img class="full" src="../assets/api_access.jpg" alt="Lytics Audience API Acess"></p>
 <h2 id="target">target</h2>
 <p>A list of rules assigning modules to audiences.</p>

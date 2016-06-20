@@ -382,7 +382,7 @@ pathfora.initializeWidgets(widgets, 'YOUR LYTICS ACCOUNT ID');
 
 <h2 id="testing">Testing</h2>
 <p>To determine which group a user should be assigned to, Pathfora generates a random value the first time they visit the page. This value gets saved as a cookie <code>PathforaTest_[id]</code> so that Pathfora knows which group the user is in on return visits. Since anyone visiting a page that contains A/B test modules should only see the modules from one group, there is no immediate visual way for developers to verify that both groups are working as expected. </p>
-<p>However you can attempt to test that both groups are showing correctly by finding and deleting the cookie named <code>PathforaTest_[id]</code> and refreshing the page. It may take a couple tries to show the other group since you are randomly assigned to a group each time. Feel free to try this on the <a href="../examples/preview/ab-testing/global.html">global example above</a>.</p>
+<p>However, you can attempt to test that both groups are showing correctly by finding and deleting the cookie named <code>PathforaTest_[id]</code> and refreshing the page. It may take a couple tries to show the other group since you are randomly assigned to a group each time. Feel free to try this on the <a href="../examples/preview/ab-testing/global.html">global example above</a>.</p>
               
             </div>
           </div>
