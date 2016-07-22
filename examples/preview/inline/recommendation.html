@@ -17,21 +17,21 @@
 <script src="https://c.lytics.io/static/pathfora.min.js"></script>
 
 <script>
-var module = new pathfora.SiteGate({
-  id: 'required-fields',
-  headline: 'Sign Up!',
-  msg: 'Submit this form to get updates',
-  required: {
-    name: false,
-    email: true,
-    company: false,
-    title: true
-  }
-});
-
-pathfora.initializeWidgets([module]);
 
 </script>
+
+<div data-pfblock="block1" data-pfrecommend="www.example.com/blog/*">
+  <div data-pftype="image"></div>
+  <a data-pftype="url"><h2 data-pftype="title"></h2></a>
+  <p data-pftype="description"></p>
+</div>
+
+
+<div data-pfblock="block2" data-pfrecommend="www.example.com/blog/*">
+  <div data-pftype="image"></div>
+  <a data-pftype="url"><h2 data-pftype="title"></h2></a>
+  <p data-pftype="description"></p>
+</div>
 
 </body>
 </html>

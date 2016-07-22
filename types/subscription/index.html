@@ -77,13 +77,6 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../api/acctid/">Lytics Account ID</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
         <a class="" href="../../api/config/">Generalized Configuration</a>
         
     </li>
@@ -237,6 +230,13 @@
           
             <li>
     <li class="toctree-l1 ">
+        <a class="" href="../../content_recommend/">Content Recommendations</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
         <a class="" href="../../display_conditions/">Display Conditions</a>
         
     </li>
@@ -286,13 +286,13 @@
             <div class="section">
               
                 <p>Subscription modules are a lite version of the form type focused on gathering the minimum amount of user data necessary to maintain communication. By default only email address will be collected by a subscription module.</p>
-<pre><code class="javascript">var module = pathfora.Subscription({
+<pre><code class="javascript">var module = new pathfora.Subscription({
   id: 'my-subscription-module-id',
   headline: 'My Headline Text',
   msg: 'My message text here.'
 });
 
-pathfora.initializeWidgets([ module ]);
+pathfora.initializeWidgets([module]);
 </code></pre>
 
 <h2 id="layout">layout</h2>

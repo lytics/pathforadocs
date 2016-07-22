@@ -8,7 +8,7 @@
   
   
   
-  <title>Callbacks - PathforaJS SDK</title>
+  <title>Content Recommendations - PathforaJS SDK</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -24,9 +24,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Callbacks";
-    var mkdocs_page_input_path = "callbacks.md";
-    var mkdocs_page_url = "/callbacks/";
+    var mkdocs_page_name = "Content Recommendations";
+    var mkdocs_page_input_path = "content_recommend.md";
+    var mkdocs_page_url = "/content_recommend/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -215,37 +215,25 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Callbacks</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#confirmaction">confirmAction</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#cancelaction">cancelAction</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#oninit">onInit</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#onload">onLoad</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#onclick">onClick</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#onsubmit">onSubmit</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../callbacks/">Callbacks</a>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../content_recommend/">Content Recommendations</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Content Recommendations</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#recommend">recommend</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#content">content</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -286,7 +274,7 @@
     
       
     
-    <li>Callbacks</li>
+    <li>Content Recommendations</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -296,13 +284,14 @@
           <div role="main">
             <div class="section">
               
-                <p>All actions taken for clicking a button, submitting a form, and other such events support optional javascript callback settings.</p>
-<h2 id="confirmaction">confirmAction</h2>
-<p>Set a <a href="../tracking/">tracking name</a> and javascript callback for a "confirm" button click event.</p>
+                <p>Lytics content recommendations are now supported as a <strong>beta</strong> feature in Pathfora. Instead of hand selecting content to show an audience, you can can create a module that will suggest content at a individual level, based on the viewer's content affinities in Lytics. If you would like to try out this feature <em>please</em> contact your customer success representative <code>success@lytics.io</code> to help set this up.</p>
+<p><strong>Note</strong>: only <a href="../types/message/">Message</a> modules using a <a href="../layouts/slideout/">slideout</a> or <a href="../layouts/modal/">modal</a> layout and a <a href="../layouts/modal/#variant">variant</a> of <code>3</code> support content recommendations.</p>
+<h2 id="recommend">recommend</h2>
+<p>Recommend controls any parameters necessary for making a content suggestions to a user using the Lytics content recommendation API.</p>
 <table>
   <thead>
     <tr>
-      <td colspan="3" align="center"><code>confirmAction</code> object</td>
+      <td colspan="3" align="center"><code>recommend</code> object</td>
     </tr>
     <tr>
       <th>Key</th>
@@ -312,27 +301,19 @@
   </thead>
 
   <tr>
-    <td>name</td>
+    <td>ql</td>
     <td>string</td>
-    <td><code>optional</code> name of the confirm event to send to Lytics and Google Analytics</td>
-  </tr>
-  <tr>
-    <td>callback</td>
-    <td>function</td>
-    <td><code>optional</code> function to execute when the use clicks the "confirm" button</td>
+    <td>formatted query to filter based on url, topic or other content variables*</td>
   </tr>
 </table>
 
-<h3><a href="../examples/preview/callbacks/confirmAction.html" target="_blank">Live Preview</a></h3>
-
-<pre data-src="../examples/src/callbacks/confirmAction.js"></pre>
-
-<h2 id="cancelaction">cancelAction</h2>
-<p>Set a <a href="../tracking/">tracking name</a> and javascript callback for a "cancel" button click event.</p>
+<p>*Contact your customer success representative <code>success@lytics.io</code> for assistance in writing a filter to recommend based on url matching, topic relevance, and/or meta attributes.</p>
+<h2 id="content">content</h2>
+<p>Content acts as a backfill/helper for the <a href="#recommend">recommend key</a>. If the content recommendation API cannot return a recommendation for the user (if they don't have any content affinity data or an error occurs), a default document may be provided.</p>
 <table>
   <thead>
     <tr>
-      <td colspan="3" align="center"><code>cancelAction</code> object</td>
+      <td colspan="3" align="center">object in <code>content</code> array</td>
     </tr>
     <tr>
       <th>Key</th>
@@ -342,140 +323,42 @@
   </thead>
 
   <tr>
-    <td>name</td>
+    <td>url</td>
     <td>string</td>
-    <td><code>optional</code> name of the cancel event to send to Lytics and Google Analytics</td>
+    <td>url of the default document to recommend to the user</td>
   </tr>
   <tr>
-    <td>callback</td>
-    <td>function</td>
-    <td><code>optional</code> function to execute when the use clicks the "cancel" button</td>
+    <td>title</td>
+    <td>string</td>
+    <td>meta title of the default document</td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>string</td>
+    <td>meta description of the default document</td>
+  </tr>
+  <tr>
+    <td>image</td>
+    <td>string</td>
+    <td>url of the meta image of the default document</td>
+  </tr>
+  <tr>
+    <td>default</td>
+    <td>boolean</td>
+    <td><code>required</code> true if the content provided is to be used should the recommendation fail</td>
   </tr>
 </table>
 
-<h3><a href="../examples/preview/callbacks/cancelAction.html" target="_blank">Live Preview</a></h3>
+<p><strong>Note:</strong> The examples below will show the default content since the account used does not have content affinity set up.</p>
+<h3>Content Recommendation Modal - <a href="../../examples/preview/layouts/modal/contentRecommend.html" target="_blank">Live Preview</a></h3>
 
-<pre data-src="../examples/src/callbacks/cancelAction.js"></pre>
+<p><img alt="Content Recommendation Modal Module" src="../../examples/img/layouts/modal/contentRecommend.png" /></p>
+<pre data-src="../../examples/src/layouts/modal/contentRecommend.js"></pre>
 
-<h2 id="oninit">onInit</h2>
-<p>Javascript callback function on initialization of the module. This should trigger just before the module is shown.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="3" align="center"><code>onInit</code>function</td>
-    </tr>
-    <tr>
-      <th>Parameter</th>
-      <th>Type</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
+<h3>Content Recommendation Slideout - <a href="../../examples/preview/layouts/slideout/contentRecommend.html" target="_blank">Live Preview</a></h3>
 
-  <tr>
-    <td>event</td>
-    <td>string</td>
-    <td><code>optional</code> name of the event</td>
-  </tr>
-  <tr>
-    <td>module</td>
-    <td>object</td>
-    <td><code>optional</code> Pathfora module object</td>
-  </tr>
-</table>
-
-<h3><a href="../examples/preview/callbacks/onInit.html" target="_blank">Live Preview</a></h3>
-
-<pre data-src="../examples/src/callbacks/onInit.js"></pre>
-
-<h2 id="onload">onLoad</h2>
-<p>Javascript callback function on loading the module, triggered when the module is shown to the user.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="3" align="center"><code>onLoad</code>function</td>
-    </tr>
-    <tr>
-      <th>Parameter</th>
-      <th>Type</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>event</td>
-    <td>string</td>
-    <td><code>optional</code> name of the event</td>
-  </tr>
-  <tr>
-    <td>payload</td>
-    <td>object</td>
-    <td><code>optional</code> object containing the Pathfora module and the rendered DOM Element</td>
-  </tr>
-</table>
-
-<h3><a href="../examples/preview/callbacks/onLoad.html" target="_blank">Live Preview</a></h3>
-
-<pre data-src="../examples/src/callbacks/onLoad.js"></pre>
-
-<h2 id="onclick">onClick</h2>
-<p>Javascript callback function <strong>for <a href="../layouts/button/">button layouts</a> only</strong> on click of the button widget.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="3" align="center"><code>onClick</code>function</td>
-    </tr>
-    <tr>
-      <th>Parameter</th>
-      <th>Type</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>event</td>
-    <td>string</td>
-    <td><code>optional</code> name of the event</td>
-  </tr>
-  <tr>
-    <td>payload</td>
-    <td>object</td>
-    <td><code>optional</code> object containing the rendered DOM Element and the javascript MouseEvent</td>
-  </tr>
-</table>
-
-<h3><a href="../examples/preview/callbacks/onClick.html" target="_blank">Live Preview</a></h3>
-
-<pre data-src="../examples/src/callbacks/onClick.js"></pre>
-
-<h2 id="onsubmit">onSubmit</h2>
-<p>Javascript callback function <strong>for any types with form elements</strong> on submission of the form (includes form data as param).</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="3" align="center"><code>onSubmit</code>function</td>
-    </tr>
-    <tr>
-      <th>Parameter</th>
-      <th>Type</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>event</td>
-    <td>string</td>
-    <td><code>optional</code> name of the event</td>
-  </tr>
-  <tr>
-    <td>payload</td>
-    <td>object</td>
-    <td><code>optional</code> object containing the rendered DOM Element, and the javascript Event, and the data submitted by the user</td>
-  </tr>
-</table>
-
-<h3><a href="../examples/preview/callbacks/onSubmit.html" target="_blank">Live Preview</a></h3>
-
-<pre data-src="../examples/src/callbacks/onSubmit.js"></pre>
+<p><img alt="Content Recommendation Modal Module" src="../../examples/img/layouts/slideout/contentRecommend.png" /></p>
+<pre data-src="../../examples/src/layouts/slideout/contentRecommend.js"></pre>
               
             </div>
           </div>
@@ -483,10 +366,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../content_recommend/" class="btn btn-neutral float-right" title="Content Recommendations">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../display_conditions/" class="btn btn-neutral float-right" title="Display Conditions">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../targeting/" class="btn btn-neutral" title="Audience Targeting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../callbacks/" class="btn btn-neutral" title="Callbacks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -512,10 +395,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../targeting/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../callbacks/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../content_recommend/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../display_conditions/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

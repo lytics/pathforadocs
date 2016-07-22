@@ -17,7 +17,7 @@
 <script src="https://c.lytics.io/static/pathfora.min.js"></script>
 
 <script>
-var module = pathfora.Form({
+var module = new pathfora.Form({
   id: 'modal-image',
   layout: 'modal',
   headline: 'Sign Up!',
@@ -26,7 +26,8 @@ var module = pathfora.Form({
   image: '../../../../assets/lion.jpg'
 });
 
-pathfora.initializeWidgets([ module ]);
+pathfora.initializeWidgets([module]);
+
 </script>
 
 </body>

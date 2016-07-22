@@ -77,13 +77,6 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../api/acctid/">Lytics Account ID</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
         <a class="" href="../../api/config/">Generalized Configuration</a>
         
     </li>
@@ -249,6 +242,13 @@
           
             <li>
     <li class="toctree-l1 ">
+        <a class="" href="../../content_recommend/">Content Recommendations</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
         <a class="" href="../../display_conditions/">Display Conditions</a>
         
     </li>
@@ -382,7 +382,7 @@
 <p>To see these classes in action, you can view the html <a href="https://github.com/lytics/pathforajs/tree/master/src/templates">templates</a> that will be rendered on your website. This is the html that gets minified, and added to a div with the class <code>pf-widget</code>. That div then gets added to the DOM of your website.</p>
 <h2 id="custom-class-name">Custom Class Name</h2>
 <p>All modules use the <code>pf-widget</code> class and thus any styles applied to this class and sub-elements will effect all modules used on the page. If you want to select and style a single module without using its <code>id</code> as a selector, you can add a custom class name to the <code>pf-widget</code> div in your javascript config.</p>
-<pre><code class="javascript">var module = pathfora.Subscription({
+<pre><code class="javascript">var module = new pathfora.Subscription({
   id: 'form-css',
   className: 'sign-up-newsletter',
   layout: 'modal',
@@ -390,7 +390,7 @@
   msg: 'Submit this form to get updates'
 });
 
-pathfora.initializeWidgets([ module ]);
+pathfora.initializeWidgets([module]);
 </code></pre>
 
 <h2 id="example">Example</h2>
