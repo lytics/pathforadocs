@@ -17,7 +17,7 @@
 <script src="https://c.lytics.io/static/pathfora.min.js"></script>
 
 <script>
-var initModule = pathfora.Message({
+var initModule = new pathfora.Message({
   id: 'onInit-callback',
   layout: 'modal',
   msg: 'Check the console log',
@@ -26,7 +26,8 @@ var initModule = pathfora.Message({
   }
 });
 
-pathfora.initializeWidgets([ initModule ]);
+pathfora.initializeWidgets([initModule]);
+
 </script>
 
 </body>

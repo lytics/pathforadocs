@@ -17,7 +17,7 @@
 <script src="https://c.lytics.io/static/pathfora.min.js"></script>
 
 <script>
-var module = pathfora.SiteGate({
+var module = new pathfora.SiteGate({
   id: 'gate-hide-form',
   headline: 'Gated Site Feature',
   msg: 'Please agree to the terms to proceed.',
@@ -25,7 +25,8 @@ var module = pathfora.SiteGate({
   okMessage: 'I Agree'
 });
 
-pathfora.initializeWidgets([ module ]);
+pathfora.initializeWidgets([module]);
+
 </script>
 
 </body>

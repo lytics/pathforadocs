@@ -77,13 +77,6 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../api/acctid/">Lytics Account ID</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
         <a class="" href="../../api/config/">Generalized Configuration</a>
         
     </li>
@@ -237,6 +230,13 @@
           
             <li>
     <li class="toctree-l1 ">
+        <a class="" href="../../content_recommend/">Content Recommendations</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
         <a class="" href="../../display_conditions/">Display Conditions</a>
         
     </li>
@@ -286,13 +286,13 @@
             <div class="section">
               
                 <p>Message type modules are focused on delivering outbound communication. For example: announcing a product launch, new content, top-level alert, etc. These modules provide a simple text message which can be used in a variety of formats.</p>
-<pre><code class="javascript">var module = pathfora.Message({
+<pre><code class="javascript">var module = new pathfora.Message({
   id: 'my-message-module-id',
   headline: 'My Headline Text',
   msg: 'My message text here.'
 });
 
-pathfora.initializeWidgets([ module ]);
+pathfora.initializeWidgets([module]);
 </code></pre>
 
 <h2 id="layout">layout</h2>

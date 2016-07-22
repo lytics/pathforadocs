@@ -77,13 +77,6 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../api/acctid/">Lytics Account ID</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
         <a class="" href="../../api/config/">Generalized Configuration</a>
         
     </li>
@@ -240,6 +233,13 @@
           
             <li>
     <li class="toctree-l1 ">
+        <a class="" href="../../content_recommend/">Content Recommendations</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
         <a class="" href="../../display_conditions/">Display Conditions</a>
         
     </li>
@@ -289,13 +289,13 @@
             <div class="section">
               
                 <p>Form type modules are used primarily for data collection or user identification. Supporting a variety of form fields and options for passing data to various end-points, this type presents a form for the user to fill out and submit.</p>
-<pre><code class="javascript">var module = pathfora.Form({
+<pre><code class="javascript">var module = new pathfora.Form({
   id: 'my-form-module-id',
   headline: 'My Headline Text',
   msg: 'My message text here.'
 });
 
-pathfora.initializeWidgets([ module ]);
+pathfora.initializeWidgets([module]);
 </code></pre>
 
 <h2 id="layout">layout</h2>

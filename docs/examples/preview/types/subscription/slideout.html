@@ -17,14 +17,14 @@
 <script src="https://c.lytics.io/static/pathfora.min.js"></script>
 
 <script>
-var module = pathfora.Subscription({
+var module = new pathfora.Subscription({
   id: 'subscription-slideout',
   layout: 'slideout',
   headline: 'Sign up!',
   msg: 'Sign up to get newsletter updates.'
 });
 
-pathfora.initializeWidgets([ module ]);
+pathfora.initializeWidgets([module]);
 
 </script>
 
