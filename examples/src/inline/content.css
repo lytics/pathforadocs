@@ -54,4 +54,5 @@ p.url {
   font-size: 12px;
   margin-bottom: 5px;
   color: #898989;
+  word-wrap: break-word;
 }
