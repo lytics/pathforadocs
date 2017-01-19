@@ -273,6 +273,12 @@
                 <li class="toctree-l3"><a href="#hideafteraction">hideAfterAction</a></li>
                 
             
+                <li class="toctree-l3"><a href="#showonexitintent">showOnExitIntent</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#manualtrigger">manualTrigger</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#urlcontains">urlContains</a></li>
                 
             
@@ -754,6 +760,79 @@ displayConditions: {
     }
   }
 }
+</code></pre>
+
+<h2 id="showonexitintent">showOnExitIntent</h2>
+<p>Only display the module when the user is about to leave the page.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>showOnExitIntent</code> boolean</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>true</td>
+    <td>module will be displayed as soon as the user is about to leave the page.</td>
+  </tr>
+  <tr>
+    <td>false</td>
+    <td><code>default</code> module will be displayed either on init or when manually invoked, depending on <code>showOnInit</code></td>
+  </tr>
+</table>
+
+<pre><code class="javascript">// example: loads immediately after initializing the module
+
+displayConditions: {
+  showOnExitIntent: true
+}
+</code></pre>
+
+<h3>Exit Intent Modal - <a href="../examples/preview/config/exitIntentModal.html" target="_blank">Live Preview</a></h3>
+
+<h2 id="manualtrigger">manualTrigger</h2>
+<p>Control when a module is triggered with javascript. Use this displayCondition in conjunction with the <a href="../api/methods/#triggerWidgets">triggerWidgets</a>.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>manualTrigger</code> boolean</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>true</td>
+    <td>module will be displayed when <a href="../api/methods/#triggerWidgets">triggerWidgets</a> method is called.</td>
+  </tr>
+  <tr>
+    <td>false</td>
+    <td><code>default</code> module will be displayed either on init or when manually invoked, depending on <code>showOnInit</code></td>
+  </tr>
+</table>
+
+<pre><code class="javascript">// example: this script alone will not display the module
+
+var module = new pathfora.Message({
+  id: 'trigger-message',
+  layout: 'modal',
+  msg: 'You clicked the button!',
+  displayConditions: {
+    manualTrigger: true
+  }
+});
+
+pathfora.initializeWidgets([module]);
+</code></pre>
+
+<pre><code class="html">&lt;!-- module will display when the user clicks this button --&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Click to display module&quot; onclick=&quot;pathfora.triggerWidgets(['trigger-message'])&quot;&gt;
 </code></pre>
 
 <h2 id="urlcontains">urlContains</h2>
