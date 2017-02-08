@@ -89,6 +89,9 @@
                     <li><a class="toctree-l4" href="#ab-test-configuration-method">A/B Test Configuration Method</a></li>
                 
             
+                <li class="toctree-l3"><a href="#triggerwidgets">triggerWidgets</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#integratewithfacebook">integrateWithFacebook</a></li>
                 
             
@@ -175,6 +178,13 @@
             
     <li class="toctree-l1 ">
         <a class="" href="../../layouts/button/">Button</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/inline/">Inline</a>
         
     </li>
 
@@ -420,6 +430,27 @@
 
 <h3 id="ab-test-configuration-method">A/B Test Configuration Method</h3>
 <p>A/B Tests have their own configuration method <code>ABTest</code>. We cover this configuration in detail in the <a href="../../ab_testing/">A/B Testing</a> section of this documentation.</p>
+<h2 id="triggerwidgets">triggerWidgets</h2>
+<p>triggerWidgets is a helper method for widgets with the <a href="../../display_conditions/#manualTrigger">manualTrigger</a> displayCondition. Widgets with this condition will not display until all other display conditions are met, and  <code>pathora.triggerWidgets</code> has been called. This method similar to <code>initializeWidgets</code>, in that it is useful when you want to trigger a module on a custom event with javascript. However with <code>triggerWidgets</code> you don't need to pass in widget object thus you can call this method even before the config has been defined.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>initializeWidgets</code> function</td>
+    </tr>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>widgetIds</td>
+    <td>array</td>
+    <td><code>optional</code> list of ids of widgets to display, if empty this method will trigger all widgets with the <a href="../../display_conditions#manualTrigger">manualTrigger</a> displayCondition</td>
+  </tr>
+</table>
+
 <h2 id="integratewithfacebook">integrateWithFacebook</h2>
 <p>Pathfora can integrate with your Facebook App to allow users to autofill the fields of <a href="../../types/form/">form</a> or <a href="../../types/gate/">gate</a> modules with their facebook profile information. This method is used to authenticate this integration with Facebook. This method should be called <strong>before</strong> the <code>initializeWidgets</code> method.</p>
 <p><strong>Note:</strong> In addition to using this method, you will need to enable <a href="../../types/form/#showsociallogin">social login</a> in your module's config to allow for form autofill.</p>

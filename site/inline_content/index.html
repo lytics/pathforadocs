@@ -159,6 +159,13 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../layouts/inline/">Inline</a>
+        
+    </li>
+
+        
     </ul>
 
         
@@ -271,6 +278,9 @@
                 <li class="toctree-l3"><a href="#attributes">Attributes</a></li>
                 
             
+                <li class="toctree-l3"><a href="#date-formatting">Date formatting</a></li>
+                
+            
             </ul>
         
     </li>
@@ -316,7 +326,7 @@
             <div class="section">
               
                 <p>Pathfora also supports "fill in the blank" style inline content recommendations. That is, you can set up your html elements to match the look and feel of your website, and add attributes which will signal to pathfora to fill in the content with results from the Lytics content recommendation API.</p>
-<pre><code class="html">&lt;div data-pfblock=&quot;my-recommendation&quot; data-pfrecommend=&quot;www.example.com/blog/*&quot;&gt;
+<pre><code class="html">&lt;div data-pfblock=&quot;my-recommendation&quot; data-pfrecommend=&quot;recent_articles&quot;&gt;
   &lt;div data-pftype=&quot;image&quot;&gt;&lt;/div&gt;
   &lt;a data-pftype=&quot;url&quot;&gt;&lt;h2 data-pftype=&quot;title&quot;&gt;&lt;/h2&gt;&lt;/a&gt;
   &lt;p data-pftype=&quot;description&quot;&gt;&lt;/p&gt;
@@ -347,12 +357,11 @@
   <tr>
     <td>data-pfrecommend</td>
     <td>string</td>
-    <td>url pattern to filter results from the recommendation API</td>
+    <td>id or slug of a content collection (segment on the content table) to filter content</td>
   </tr>
 </table>
 
-<p>The <code>pfrecommend</code> attribute value may contain wildcards in the url, and should not include the http protocol in the url. This value gets used to formulate the filter we pass to the recommendation API. If you do not want to set a filter this value should be <code>*</code>.</p>
-<p>Inside the container element you may have several elements with the <code>data-pftype</code> attribute. Based on the value of this attribute, Pathfora will set the innerHTML or an attribute of this element to contain a content recommendation for the user.</p>
+<p>Inside the container element you may have several elements with the <code>data-pfblock</code> attribute. Based on the value of this attribute, Pathfora will set the innerHTML or an attribute of this element to contain a content recommendation for the user.</p>
 <table>
   <thead>
     <tr>
@@ -383,9 +392,24 @@
     <td>description</td>
     <td>set the innerHTML of this element to be the meta description of the document</td>
   </tr>
+
+  <tr>
+    <td>author</td>
+    <td>set the innerHTML of this element to be the author of the document</td>
+  </tr>
+
+  <tr>
+    <td>published</td>
+    <td>set the innerHTML of this element to be the date this article was published, see below for formatting</td>
+  </tr>
 </table>
 
 <p>If for some reason the recommendation API returns an error for the user, and cannot fill in recommendation, you can set some default content to show by creating another set of elements with content you've selected filled in and the <code>data-pfrecommend</code> value set to default. This content will only show if the any recommendation with a matching <code>data-pfblock</code> couldn't be loaded.</p>
+<h2 id="date-formatting">Date formatting</h2>
+<p>Pathfora uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString">toLocaleDateString()</a> to format the date published of an article. You can set the locale and options for this function on the pathfora object.</p>
+<pre data-src="../examples/src/inline/content.js"></pre>
+
+<p>If unset by the user, the locale will default to <code>en-US</code>.</p>
 <h3>Content Recommendations - <a href="../examples/preview/inline/content.html" target="_blank">Live Preview</a></h3>
 
 <p><img alt="Inline Content Recommendation" src="../examples/img/inline/content.png" /></p>

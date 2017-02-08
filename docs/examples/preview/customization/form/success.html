@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pathfora Example</title>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+
+<style>
+
+</style>
+</head>
+
+<body class="example">
+
+
+
+<script src="https://c.lytics.io/api/tag/0d47e6304d12858905b4f111090a68a1/lio.js"></script>
+<script src="https://c.lytics.io/static/pathfora.min.js"></script>
+
+<script>
+var module = new pathfora.Subscription({
+  id: 'form-modal',
+  layout: 'modal',
+  headline: 'Sign Up!',
+  msg: 'Submit this form to get updates and see the success message.',
+  success: {
+    headline: 'Thanks!',
+    msg: 'We have received your submission, thank you for signing up.',
+    delay: 5
+  }
+});
+
+pathfora.initializeWidgets([module]);
+
+</script>
+
+</body>
+</html>
