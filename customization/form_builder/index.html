@@ -8,7 +8,7 @@
   
   
   
-  <title>Form Elements - PathforaJS SDK</title>
+  <title>Form Schema Builder - PathforaJS SDK</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -25,9 +25,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Form Elements";
-    var mkdocs_page_input_path = "customization/form.md";
-    var mkdocs_page_url = "/customization/form/";
+    var mkdocs_page_name = "Form Schema Builder";
+    var mkdocs_page_input_path = "customization/form_builder.md";
+    var mkdocs_page_url = "/customization/form_builder/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -200,25 +200,19 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Form Elements</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#formelements">formElements</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#success">success</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../form/">Form Elements</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../form_builder/">Form Schema Builder</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Form Schema Builder</a>
+        
+            <ul>
+            
+            </ul>
         
     </li>
 
@@ -337,7 +331,7 @@
         
       
     
-    <li>Form Elements</li>
+    <li>Form Schema Builder</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -347,114 +341,11 @@
           <div role="main">
             <div class="section">
               
-                <p>Pathfora now allows for fully customized form fields for modules of type <a href="../../types/form/">form</a> and <a href="../../types/form/">gate</a>. These input fields include text, texarea, select, checkbox, and radio button.</p>
-<p>Try out our <a href="../form_builder/">form schema builder</a> to easily build forms with a drag and drop interface and output a <code>formElements</code> object for your module config.</p>
-<p>Legacy form documentation is also available <a href="../form_legacy/">here</a></p>
-<h2 id="formelements">formElements</h2>
-<p>This is a list of form element objects to include in the module's form. The order of these elements determines the order in which they render in the module.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="3" align="center">object in <code>formElements</code> array</td>
-    </tr>
-    <tr>
-      <th>Key</th>
-      <th>Type</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
+                <p>Drag a field from the right hand list onto the canvas to add it to your custom form. Change the settings and options for your fields and click "save" to generate the schema that you can copy and paste into your Pathfora config.</p>
+<div id="custom-form-builder"></div>
 
-  <tr>
-    <td>type</td>
-    <td>string</td>
-    <td>type of form element: checkbox-group, radio-group, select, text, or textarea</td>
-  </tr>
-  <tr>
-    <td>name</td>
-    <td>string</td>
-    <td>name attribute of the field, this is the primary identifier used in tracking</td>
-  </tr>
-  <tr>
-    <td>label</td>
-    <td>string</td>
-    <td><code>optional</code> label to give the field context to the user/td>
-  </tr>
-  <tr>
-    <td>placeholder</td>
-    <td>string</td>
-    <td><code>optional</code> placeholder text for text input, textarea, and select fields</td>
-  </tr>
-  <tr>
-    <td>values</td>
-    <td>array</td>
-    <td><code>optional</code> list of options for checkbox, radio, or select elements.</td>
-  </tr>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <td colspan="3" align="center">object in <code>values</code> array</td>
-    </tr>
-    <tr>
-      <th>Key</th>
-      <th>Type</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>label</td>
-    <td>string</td>
-    <td>the value of the option shown in the form to the user</td>
-  </tr>
-  <tr>
-    <td>value</td>
-    <td>string</td>
-    <td>the value attribute of the option or input element, used in tracking</td>
-  </tr>
-</table>
-
-<h3>Custom Forms - <a href="../../examples/preview/customization/form/custom.html" target="_blank">Live Preview</a></h3>
-
-<p><img alt="Form Fields" src="../../examples/img/customization/form/custom.png" /></p>
-<pre data-src="../../examples/src/customization/form/custom.js"></pre>
-
-<h2 id="success">success</h2>
-<p>Set a custom success/confirmation message to show after the user submits a form before hiding the module.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="3" align="center"><code>success</code> object</td>
-    </tr>
-    <tr>
-      <th>Key</th>
-      <th>Type</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>headline</td>
-    <td>string</td>
-    <td>header or title text for the success state</td>
-  </tr>
-  <tr>
-    <td>msg</td>
-    <td>string</td>
-    <td>text message content of the success state</td>
-  </tr>
-  <tr>
-    <td>delay</td>
-    <td>int</td>
-    <td>how long in seconds to show the success state before hiding the module. if 0, the module will not hide until the user closes it.</td>
-  </tr>
-</table>
-
-<h3>Success State - <a href="../../examples/preview/customization/form/success.html" target="_blank">Live Preview</a></h3>
-
-<p><img alt="Form Field Placeholders" src="../../examples/img/customization/form/success.png" /></p>
-<pre data-src="../../examples/src/customization/form/success.js"></pre>
+<p><br></p>
+<pre class="form-builder-output hidden"><code class="javascript hljs"></code></pre>
               
             </div>
           </div>
@@ -462,10 +353,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../form_builder/" class="btn btn-neutral float-right" title="Form Schema Builder">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../form_legacy/" class="btn btn-neutral float-right" title="Form Elements (Legacy)">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../css/" class="btn btn-neutral" title="Custom CSS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../form/" class="btn btn-neutral" title="Form Elements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -491,10 +382,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../css/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../form/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../form_builder/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../form_legacy/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
