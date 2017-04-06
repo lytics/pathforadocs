@@ -227,6 +227,13 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../customization/entity_fields/">Entity Fields</a>
+        
+    </li>
+
+        
     </ul>
 
         
@@ -268,6 +275,9 @@
                 
             
                 <li class="toctree-l3"><a href="#showdelay">showDelay</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#showonmissingfields">showOnMissingFields</a></li>
                 
             
                 <li class="toctree-l3"><a href="#hideafter">hideAfter</a></li>
@@ -437,6 +447,36 @@ displayConditions: {
   <tr>
     <td>0 – ∞</td>
     <td>module will be displayed after waiting x seconds after initialization</td>
+  </tr>
+</table>
+
+<pre><code class="javascript">// example: loads after a 10 second delay
+
+displayConditions: {
+  showDelay: 10
+}
+</code></pre>
+
+<h2 id="showonmissingfields">showOnMissingFields</h2>
+<p>By default, a module will be hidden if tried to include an <a href="../customization/entity_fields/">entity field</a> that the user does not have. showOnMissingFields can override this beahvior.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="2" align="center"><code>showDelay</code> int</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>false</td>
+    <td><code>default</code> module will be hidden if the field does not exist and no fallback is defined</td>
+  </tr>
+  <tr>
+    <td>true</td>
+    <td>module will show regardless of the missing field value, and the template will be replaced by an empty string.</td>
   </tr>
 </table>
 
