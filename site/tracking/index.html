@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
   <link href="../assets/examples.css" rel="stylesheet">
+  <link href="../assets/vendor/formbuilder.min.css" rel="stylesheet">
 
   
   <script>
@@ -33,7 +34,10 @@
   <script src="../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../js/highlight.pack.js"></script>
   <script src="../js/theme.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="../assets/pre.js"></script>
+  <script src="../assets/builder.js"></script>
+  <script src="../assets/vendor/formbuilder.js"></script>
 
   
 </head>
@@ -204,7 +208,28 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../customization/form_builder/">Form Schema Builder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../customization/form_legacy/">Form Elements (Legacy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../customization/responsive/">Responsive Styles</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../customization/entity_fields/">Entity Fields</a>
         
     </li>
 
@@ -325,7 +350,7 @@
           <div role="main">
             <div class="section">
               
-                <p>Pathfora can send tracking events and the user data submitted to Lytics and Google Analytics. As long as your tags are all set up in the correct order, module data will be sent automatically. Below we will look at which fields are sent in detail and their formats.</p>
+                <p>Pathfora can send tracking events and the user data submitted to Lytics and Google Analytics. As long as your tags are all set up in the correct order, module data will be sent Lytics automatically. To enable this data to be sent to Google Analytics set the <code>enableGA</code> flag: <code>window.pathfora.enableGA = true;</code> before loading any module configs in your code. Below we will look at which data fields are sent in detail and their formats.</p>
 <h2 id="lytics">Lytics</h2>
 <p>As long as your <a href="https://activate.getlytics.com/resources/documentation/">Lytics javascript tag</a> is loaded before the Pathfora tag, all event data and data collected from modules with user input will be sent to the the stream <a href="https://activate.getlytics.com/resources/documentation/jstag">configured in your Lytics javascript tag</a>. The following raw data fields can be sent to Lytics by Pathfora.</p>
 <table>

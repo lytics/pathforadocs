@@ -18,13 +18,13 @@
 
 <script>
 var module = new pathfora.Message({
-  id: 'confirm-callback',
+  id: 'close-callback',
   layout: 'modal',
-  msg: 'Click the "confirm" button to see the callback',
-  confirmAction: {
-    name: 'custom confirm',
+  msg: 'Click the "close" button to see the callback',
+  closeAction: {
+    name: 'custom close',
     callback: function (event, payload) {
-      alert('confirm callback');
+      alert('cancel callback');
       console.log(payload);
     }
   }

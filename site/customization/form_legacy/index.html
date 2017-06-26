@@ -8,7 +8,7 @@
   
   
   
-  <title>Message - PathforaJS SDK</title>
+  <title>Form Elements (Legacy) - PathforaJS SDK</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -25,9 +25,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Message";
-    var mkdocs_page_input_path = "types/message.md";
-    var mkdocs_page_url = "/types/message/";
+    var mkdocs_page_name = "Form Elements (Legacy)";
+    var mkdocs_page_input_path = "customization/form_legacy.md";
+    var mkdocs_page_url = "/customization/form_legacy/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -100,36 +100,29 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Message</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#layout">layout</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/message/">Message</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../form/">Form</a>
+        <a class="" href="../../types/form/">Form</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../subscription/">Subscription</a>
+        <a class="" href="../../types/subscription/">Subscription</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../gate/">Gate</a>
+        <a class="" href="../../types/gate/">Gate</a>
         
     </li>
 
@@ -187,56 +180,69 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/buttons/">Action Buttons</a>
+        <a class="" href="../buttons/">Action Buttons</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/themes/">Color Themes</a>
+        <a class="" href="../themes/">Color Themes</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/css/">Custom CSS</a>
+        <a class="" href="../css/">Custom CSS</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/form/">Form Elements</a>
+        <a class="" href="../form/">Form Elements</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/form_builder/">Form Schema Builder</a>
+        <a class="" href="../form_builder/">Form Schema Builder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Form Elements (Legacy)</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#fields">fields</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#required">required</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#placeholders">placeholders</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/form_legacy/">Form Elements (Legacy)</a>
+        <a class="" href="../responsive/">Responsive Styles</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../customization/responsive/">Responsive Styles</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/entity_fields/">Entity Fields</a>
+        <a class="" href="../entity_fields/">Entity Fields</a>
         
     </li>
 
@@ -337,11 +343,11 @@
         
       
         
-          <li>Types &raquo;</li>
+          <li>Customization &raquo;</li>
         
       
     
-    <li>Message</li>
+    <li>Form Elements (Legacy)</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -351,75 +357,174 @@
           <div role="main">
             <div class="section">
               
-                <p>Message type modules are focused on delivering outbound communication. For example: announcing a product launch, new content, top-level alert, etc. These modules provide a simple text message which can be used in a variety of formats.</p>
-<pre><code class="javascript">var module = new pathfora.Message({
-  id: 'my-message-module-id',
-  headline: 'My Headline Text',
-  msg: 'My message text here.'
-});
-
-pathfora.initializeWidgets([module]);
-</code></pre>
-
-<h2 id="layout">layout</h2>
-<p>Define which layout type the form module should use.</p>
+                <p>Pathfora now supports fully customizable <a href="../../types/form/">form elements</a>. This doc outlines the customization options for deprecated forms including hiding specific input fields, setting placeholder text, and selecting which fields are required for the user to submit the form.</p>
+<h2 id="fields">fields</h2>
+<p>Select which fields should be a part of the module's form. By default, a <a href="../../types/form/">form</a> module has the name, email, title, and message fields. And a <a href="../../types/form/">gate</a> module has the name, email, company, and title fields. </p>
 <table>
   <thead>
     <tr>
-      <td colspan="2" align="center"><code>layout</code> string</td>
+      <td colspan="3" align="center"><code>fields</code> object</td>
     </tr>
     <tr>
-      <th>Value</th>
+      <th>Key</th>
+      <th>Type</th>
       <th>Behavior</th>
     </tr>
   </thead>
 
   <tr>
-    <td>modal</td>
-    <td>module uses a <a href="../../layouts/modal">modal layout</a></td>
+    <td>name</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide input for the user's full name</td>
   </tr>
   <tr>
-    <td>slideout</td>
-    <td>module uses a <a href="../../layouts/slideout">slideout layout</a></td>
+    <td>email</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide input for the user's email address</td>
   </tr>
   <tr>
-    <td>bar</td>
-    <td>module uses a <a href="../../layouts/bar">bar layout</a></td>
+    <td>title</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide input for the user's job title</td>
   </tr>
   <tr>
-    <td>button</td>
-    <td>module uses a <a href="../../layouts/button">button layout</a></td>
+    <td>company</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide input for the user's company of employment</td>
   </tr>
   <tr>
-    <td>inline</td>
-    <td>module uses a <a href="../../layouts/inline">inline layout</a></td>
+    <td>phone</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide input for the user's phone number</td>
+  </tr>
+  <tr>
+    <td>referralEmail</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide input for a referral email</td>
+  </tr>
+  <tr>
+    <td>message</td>
+    <td>boolean</td>
+    <td><code>optional</code> show or hide texarea field for comments or a longer form message</td>
   </tr>
 </table>
 
-<h3>Modal - <a href="../../examples/preview/types/message/modal.html" target="_blank">Live Preview</a></h3>
+<h3>Show/Hide Fields - <a href="../../examples/preview/customization/form/fields.html" target="_blank">Live Preview</a></h3>
 
-<p><img alt="Modal Message Module" src="../../examples/img/types/message/modal.png" /></p>
-<pre data-src="../../examples/src/types/message/modal.js"></pre>
+<p><img alt="Form Fields" src="../../examples/img/customization/form/fields.png" /></p>
+<pre data-src="../../examples/src/customization/form/fields.js"></pre>
 
-<h3>Slideout - <a href="../../examples/preview/types/message/slideout.html" target="_blank">Live Preview</a></h3>
+<h2 id="required">required</h2>
+<p>Set which fields are required to be filled out by the user to submit the form. By default only name and email fields are required for all modules with forms.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>required</code> object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
 
-<p><img alt="Slideout Message Module" src="../../examples/img/types/message/slideout.png" /></p>
-<pre data-src="../../examples/src/types/message/slideout.js"></pre>
+  <tr>
+    <td>name</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the name field</td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the email address field</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the job title field</td>
+  </tr>
+  <tr>
+    <td>company</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the company of employment field</td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the phone number field</td>
+  </tr>
+  <tr>
+    <td>referralEmail</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the referral email field</td>
+  </tr>
+  <tr>
+    <td>message</td>
+    <td>boolean</td>
+    <td><code>optional</code> set the required status for the long form message field</td>
+  </tr>
+</table>
 
-<h3>Bar - <a href="../../examples/preview/types/message/bar.html" target="_blank">Live Preview</a></h3>
+<h3>Required Fields - <a href="../../examples/preview/customization/form/required.html" target="_blank">Live Preview</a></h3>
 
-<p><img alt="Bar Message Module" src="../../examples/img/types/message/bar.png" /></p>
-<pre data-src="../../examples/src/types/message/bar.js"></pre>
+<p><img alt="Required Form Fields" src="../../examples/img/customization/form/required.png" /></p>
+<pre data-src="../../examples/src/customization/form/required.js"></pre>
 
-<h3>Button - <a href="../../examples/preview/types/message/button.html" target="_blank">Live Preview</a></h3>
+<h2 id="placeholders">placeholders</h2>
+<p>Set the placeholder text for form elements.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>placeholders</code> object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
 
-<p><img alt="Button Message Module" src="../../examples/img/types/message/button.png" /></p>
-<pre data-src="../../examples/src/types/message/button.js"></pre>
+  <tr>
+    <td>name</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the name field</td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the email address field</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the job title field</td>
+  </tr>
+  <tr>
+    <td>company</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the company of employment field</td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the phone number field</td>
+  </tr>
+  <tr>
+    <td>referralEmail</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the referral email field</td>
+  </tr>
+  <tr>
+    <td>message</td>
+    <td>string</td>
+    <td><code>optional</code> set the placeholder text for the long form message field</td>
+  </tr>
+</table>
 
-<h3>Inline - <a href="../../examples/preview/types/message/inline.html" target="_blank">Live Preview</a></h3>
+<h3>Placeholders - <a href="../../examples/preview/customization/form/placeholders.html" target="_blank">Live Preview</a></h3>
 
-<p><img alt="Inline Message Module" src="../../examples/img/types/message/inline.png" /></p>
-<pre data-src="../../examples/src/types/message/inline.js"></pre>
+<p><img alt="Form Field Placeholders" src="../../examples/img/customization/form/placeholders.png" /></p>
+<pre data-src="../../examples/src/customization/form/placeholders.js"></pre>
               
             </div>
           </div>
@@ -427,10 +532,10 @@ pathfora.initializeWidgets([module]);
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../form/" class="btn btn-neutral float-right" title="Form">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../responsive/" class="btn btn-neutral float-right" title="Responsive Styles">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../api/config/" class="btn btn-neutral" title="Generalized Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../form_builder/" class="btn btn-neutral" title="Form Schema Builder"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -456,10 +561,10 @@ pathfora.initializeWidgets([module]);
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../api/config/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../form_builder/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../form/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../responsive/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
