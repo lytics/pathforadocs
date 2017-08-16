@@ -93,6 +93,9 @@
                     <li><a class="toctree-l4" href="#ab-test-configuration-method">A/B Test Configuration Method</a></li>
                 
             
+                <li class="toctree-l3"><a href="#recommendcontent">recommendContent</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#triggerwidgets">triggerWidgets</a></li>
                 
             
@@ -455,6 +458,43 @@
 
 <h3 id="ab-test-configuration-method">A/B Test Configuration Method</h3>
 <p>A/B Tests have their own configuration method <code>ABTest</code>. We cover this configuration in detail in the <a href="../../ab_testing/">A/B Testing</a> section of this documentation.</p>
+<h2 id="recommendcontent">recommendContent</h2>
+<p>recommendContent is a public method that makes a request to the Lytics content recommendation API and returns a list of recommended documents for the user. These results are also placed in session storage to reduce the number of calls to the API on subsequent page loads.</p>
+<p><strong>Note:</strong> Lytics' public recommendation API is only authorized for use on domains that have been whitelisted for your account. Contact your customer success representative <code>success@lytics.io</code> if you need to whitelist a new domain.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>initializeWidgets</code> function</td>
+    </tr>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>accountId</td>
+    <td>string</td>
+    <td>id of the Lytics account to make API requests to</td>
+  </tr>
+  <tr>
+    <td>params</td>
+    <td>object</td>
+    <td>object containing query params to call the <a href="https://www.getlytics.com/developers/rest-api#content-recommendation">recommendation API</a> with</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>string</td>
+    <td>"unique identifier" for the recommendation, used to reaccess response data from session storage</td>
+  </tr>
+  <tr>
+    <td>callback</td>
+    <td>function</td>
+    <td>function to execute once we've received a response from the API. This function is passed the document objects in an array</td>
+  </tr>
+</table>
+
 <h2 id="triggerwidgets">triggerWidgets</h2>
 <p>triggerWidgets is a helper method for widgets with the <a href="../../display_conditions/#manualTrigger">manualTrigger</a> displayCondition. Widgets with this condition will not display until all other display conditions are met, and  <code>pathora.triggerWidgets</code> has been called. This method similar to <code>initializeWidgets</code>, in that it is useful when you want to trigger a module on a custom event with javascript. However with <code>triggerWidgets</code> you don't need to pass in widget object thus you can call this method even before the config has been defined.</p>
 <table>
