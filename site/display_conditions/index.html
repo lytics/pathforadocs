@@ -313,6 +313,9 @@
                 <li class="toctree-l3"><a href="#urlcontains">urlContains</a></li>
                 
             
+                <li class="toctree-l3"><a href="#metaconatins">metaConatins</a></li>
+                
+            
             </ul>
         
     </li>
@@ -1070,6 +1073,53 @@ displayConditions: {
 // http://www.getlytics.com/integrations/campaignmonitor?ref=some_stranger
 // http://www.getlytics.com/integrations?ref=our_partner
 // http://www.getlytics.com/blog/adroll?session=125929&amp;ref=our_partner
+</code></pre>
+
+<h2 id="metaconatins">metaConatins</h2>
+<p>Only display the module on pages that have meta tags that match the conditions defined.</p>
+<p>Note that metaContains does not support partial matches as urlContains does. Treat metaContains values as having the exact match rule.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center">object in <code>metaContains</code> array</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>property</td>
+    <td>string</td>
+    <td><code>optional</code> property attribute of the meta tag</td>
+  </tr>
+  <tr>
+    <td>content</td>
+    <td>string</td>
+    <td><code>optional</code> value of the content attribute of the meta tag to match against</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>string</td>
+    <td><code>optional</code> name attribute of the meta tag</td>
+  </tr>
+</table>
+
+<pre><code class="javascript">// example match based on og:type
+
+displayConditions: {
+  metaContains: [
+    {
+      property: 'og:type',
+      content: 'website'
+    }
+  ]
+}
+
+// Matches:
+// &lt;meta property=&quot;og:type&quot; content=&quot;website&quot; /&gt;
 </code></pre>
               
             </div>

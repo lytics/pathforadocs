@@ -384,9 +384,16 @@
     <td>string</td>
     <td>id or slug of a content collection (segment on the content table) to filter content</td>
   </tr>
+
+  <tr>
+    <td>data-pfshuffle</td>
+    <td>boolean</td>
+    <td><code>optional</code> if true, shuffle the result of the recommendations on each page load.</td>
+  </tr>
 </table>
 
 <p>Inside the container element you may have several elements with the <code>data-pfblock</code> attribute. Based on the value of this attribute, Pathfora will set the innerHTML or an attribute of this element to contain a content recommendation for the user.</p>
+<p>Note that only one <code>data-pfshuffle</code> attribute is necessary per unique value of <code>data-pfrecommend</code>. This shuffle param will be applied to all blocks with a common <code>data-pfrecommend</code> value since we make one API request per content collection referenced on the page.</p>
 <table>
   <thead>
     <tr>
