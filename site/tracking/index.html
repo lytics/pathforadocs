@@ -350,7 +350,7 @@
           <div role="main">
             <div class="section">
               
-                <p>Pathfora can send tracking events and the user data submitted to Lytics and Google Analytics. As long as your tags are all set up in the correct order, module data will be sent Lytics automatically. To enable this data to be sent to Google Analytics set the <code>enableGA</code> flag: <code>window.pathfora.enableGA = true;</code> before loading any module configs in your code. Below we will look at which data fields are sent in detail and their formats.</p>
+                <p>Pathfora can send tracking events and the user data submitted to Lytics and Google Analytics. As long as your tags are all set up in the correct order, module data will be sent Lytics automatically. Below we will look at which data fields are sent in detail and their formats.</p>
 <h2 id="lytics">Lytics</h2>
 <p>As long as your <a href="https://activate.getlytics.com/resources/documentation/">Lytics javascript tag</a> is loaded before the Pathfora tag, all event data and data collected from modules with user input will be sent to the the stream <a href="https://activate.getlytics.com/resources/documentation/jstag">configured in your Lytics javascript tag</a>. The following raw data fields can be sent to Lytics by Pathfora.</p>
 <table>
@@ -445,7 +445,7 @@
   </tr>
   <tr>
     <td>confirm</td>
-    <td>"confirm" button was clicked by the user</td>
+    <td>"confirm" CTA button was clicked by the user</td>
   </tr>
   <tr>
     <td>cancel</td>
@@ -463,12 +463,28 @@
     <td>unlock</td>
     <td>user submitted information from a <a href="../types/gate">gate module</a></td>
   </tr>
+  <tr>
+    <td>hover</td>
+    <td>indicates that the user hovered over a button on the modal, name of button is recorded by <code>pf-widget-action</code></td>
+  </tr>
+  <tr>
+    <td>focus</td>
+    <td>indicates that a form element on a modal received focus, name of the form field is recorded by <code>pf-widget-action</code></td>
+  </tr>
+  <tr>
+    <td>form_started</td>
+    <td>indicates that a user began typing in a form element on the modal, name of the form field is recorded by <code>pf-widget-action</code></td>
+  </tr>
 </table>
 
 <p>To verify that the event data fields are being sent properly to Lytics, you can simulate an action by interacting with your module and checking that the expected fields exist in the data streams section of your Lytics Account.</p>
 <p>By default these fields are available as user fields so that you can use them in the creation of segments. If you need help using these fields or would like to map the user fields differently please contact your customer success representative <code>success@getlytics.com</code>.</p>
 <h2 id="google-analytics">Google Analytics</h2>
-<p>Pathfora will send event data from the modules on your website to your Google Analytics account as long as it has access to the <code>ga</code> function. This requires that you have the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/">analytics.js snippet</a> on your website loaded before the Pathfora tag. An event sent to Google Analytics by Pathfora will use the following attributes for <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/events#overview">event tracking</a>:</p>
+<p>To enable this data to be sent to Google Analytics set the <code>enableGA</code> flag before loading any module configs in your code:</p>
+<pre><code class="js">window.pathfora.enableGA = true;
+</code></pre>
+
+<p>If this flag is enabled, pathfora will send event data from the modules on your website to your Google Analytics account as long as it has access to the <code>ga</code> function. This requires that you have the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/">analytics.js snippet</a> on your website loaded before the Pathfora tag. An event sent to Google Analytics by Pathfora will use the following attributes for <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/events#overview">event tracking</a>:</p>
 <table>
 <thead>
 <tr>
