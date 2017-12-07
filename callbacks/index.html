@@ -275,7 +275,7 @@
                 <li class="toctree-l3"><a href="#onclick">onClick</a></li>
                 
             
-                <li class="toctree-l3"><a href="#onsubmit">onSubmit</a></li>
+                <li class="toctree-l3"><a href="#onsubmit-deprecated">onSubmit (deprecated)</a></li>
                 
             
                 <li class="toctree-l3"><a href="#onmodalclose">onModalClose</a></li>
@@ -398,6 +398,11 @@
     <td>function</td>
     <td><code>optional</code> function to execute when the use clicks the "confirm" button (see params below)</td>
   </tr>
+  <tr>
+    <td>waitForAsyncResponse</td>
+    <td>boolean</td>
+    <td><code>optional</code> if true, a third parameter (cb) will be passed to the callback function (see params below)</td>
+  </tr>
 </table>
 
 <table>
@@ -415,12 +420,17 @@
   <tr>
     <td>event</td>
     <td>string</td>
-    <td><code>optional</code> name of the event</td>
+    <td>name of the event</td>
   </tr>
   <tr>
     <td>payload</td>
     <td>object</td>
-    <td><code>optional</code> object containing the rendered DOM Element (widget), the config of the widget (config), and the javascript event (event)</td>
+    <td>object containing the rendered DOM Element (widget), the config of the widget (config), the javascript event (event), and the data submitted by the user in the case of modules with a form (data)</td>
+  </tr>
+  <tr>
+    <td>cb</td>
+    <td>function</td>
+    <td><code>optional</code> cb accepts a single boolean param, if true, the submission was counted as successful, and the <a href="../customization/form/#formstates">success state</a> will show. if false, the <a href="../customization/form/#formstates">error state</a> will show.</td>
   </tr>
 </table>
 
@@ -474,17 +484,12 @@
   <tr>
     <td>event</td>
     <td>string</td>
-    <td><code>optional</code> name of the event</td>
-  </tr>
-  <tr>
-    <td>close</td>
-    <td>boolean</td>
-    <td><code>optional</code> if false, prevent the modal from closing after the callback is executed</td>
+    <td>name of the event</td>
   </tr>
   <tr>
     <td>payload</td>
     <td>object</td>
-    <td><code>optional</code> object containing the rendered DOM Element (widget), the config of the widget (config), and the javascript event (event)</td>
+    <td>object containing the rendered DOM Element (widget), the config of the widget (config), and the javascript event (event)</td>
   </tr>
 </table>
 
@@ -533,12 +538,12 @@
   <tr>
     <td>event</td>
     <td>string</td>
-    <td><code>optional</code> name of the event</td>
+    <td>name of the event</td>
   </tr>
   <tr>
     <td>payload</td>
     <td>object</td>
-    <td><code>optional</code> object containing the rendered DOM Element (widget), the config of the widget (config), and the javascript event (event)</td>
+    <td>object containing the rendered DOM Element (widget), the config of the widget (config), and the javascript event (event)</td>
   </tr>
 </table>
 
@@ -563,12 +568,12 @@
   <tr>
     <td>event</td>
     <td>string</td>
-    <td><code>optional</code> name of the event</td>
+    <td>name of the event</td>
   </tr>
   <tr>
     <td>payload</td>
     <td>object</td>
-    <td><code>optional</code> object containing the pathfora module (config)</td>
+    <td>object containing the pathfora module (config)</td>
   </tr>
 </table>
 
@@ -593,12 +598,12 @@
   <tr>
     <td>event</td>
     <td>string</td>
-    <td><code>optional</code> name of the event</td>
+    <td>name of the event</td>
   </tr>
   <tr>
     <td>payload</td>
     <td>object</td>
-    <td><code>optional</code> object containing the Pathfora module (config) and the rendered DOM Element (widget)</td>
+    <td>object containing the Pathfora module (config) and the rendered DOM Element (widget)</td>
   </tr>
 </table>
 
@@ -623,12 +628,12 @@
   <tr>
     <td>event</td>
     <td>string</td>
-    <td><code>optional</code> name of the event</td>
+    <td>name of the event</td>
   </tr>
   <tr>
     <td>payload</td>
     <td>object</td>
-    <td><code>optional</code> object containing the rendered DOM Element (widget), the pathfora module (config), and the javascript MouseEvent (event)</td>
+    <td>object containing the rendered DOM Element (widget), the pathfora module (config), and the javascript MouseEvent (event)</td>
   </tr>
 </table>
 
@@ -636,7 +641,8 @@
 
 <pre data-src="../examples/src/callbacks/onClick.js"></pre>
 
-<h2 id="onsubmit">onSubmit</h2>
+<h2 id="onsubmit-deprecated">onSubmit (deprecated)</h2>
+<p><strong>This callback is deprecated. We advise using <a href="#confirmaction">confirmAction</a> instead, as it has the same functionality.</strong></p>
 <p>Javascript callback function <strong>for any types with form elements</strong> on submission of the form (includes form data as param).</p>
 <table>
   <thead>
@@ -653,12 +659,12 @@
   <tr>
     <td>event</td>
     <td>string</td>
-    <td><code>optional</code> name of the event</td>
+    <td>name of the event</td>
   </tr>
   <tr>
     <td>payload</td>
     <td>object</td>
-    <td><code>optional</code> object containing the rendered DOM Element (widget), the pathfora module (config), and the javascript Event (event), and the data submitted by the user (data)</td>
+    <td>object containing the rendered DOM Element (widget), the pathfora module (config), and the javascript Event (event), and the data submitted by the user (data)</td>
   </tr>
 </table>
 
@@ -683,12 +689,12 @@
   <tr>
     <td>event</td>
     <td>string</td>
-    <td><code>optional</code> name of the event</td>
+    <td>name of the event</td>
   </tr>
   <tr>
     <td>payload</td>
     <td>object</td>
-    <td><code>optional</code> object containing the rendered DOM Element (widget), the pathfora module (config), and the javascript Event (event), and the data submitted by the user (data)</td>
+    <td>object containing the rendered DOM Element (widget), the pathfora module (config), and the javascript Event (event), and the data submitted by the user (data)</td>
   </tr>
 </table>
 
