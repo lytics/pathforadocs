@@ -208,7 +208,7 @@
                 <li class="toctree-l3"><a href="#formelements">formElements</a></li>
                 
             
-                <li class="toctree-l3"><a href="#success">success</a></li>
+                <li class="toctree-l3"><a href="#formstates">formStates</a></li>
                 
             
             </ul>
@@ -427,12 +427,36 @@
 <p><img alt="Form Fields" src="../../examples/img/customization/form/custom.png" /></p>
 <pre data-src="../../examples/src/customization/form/custom.js"></pre>
 
-<h2 id="success">success</h2>
-<p>Set a custom success/confirmation message to show after the user submits a form before hiding the module.</p>
+<h2 id="formstates">formStates</h2>
+<p>Set a custom success or error state message on confirmation to show after the user submits a form.</p>
 <table>
   <thead>
     <tr>
-      <td colspan="3" align="center"><code>success</code> object</td>
+      <td colspan="3" align="center"><code>formStates</code> object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>success</td>
+    <td>object</td>
+    <td><code>optional</code> object containing the settings for the success state</td>
+  </tr>
+  <tr>
+    <td>error</td>
+    <td>object</td>
+    <td><code>optional</code> object containing the settings for the error state (note that the error state is only used by modules with the <a href="../../callbacks/#confirmaction">waitForAsyncResponse</a> field set to true</td>
+  </tr>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>success</code> or <code>error</code> object</td>
     </tr>
     <tr>
       <th>Key</th>
@@ -479,7 +503,7 @@
   <tr>
     <td>confirmAction</td>
     <td>object</td>
-    <td>object containing the name and callback function for the confirmation button on the success state (see <a href="../../callbacks/#confirmaction">confirmAction</a>)</td>
+    <td>object containing the name and callback function for the confirmation button on the success state (see <a href="../../callbacks/#confirmaction">confirmAction</a> note that only the <code>name</code> and <code>callback</code> fields are relevant in this nested version of <code>confirmAction</code>).</td>
   </tr>
   <tr>
     <td>cancelAction</td>
@@ -488,10 +512,10 @@
   </tr>
 </table>
 
-<h3>Success State - <a href="../../examples/preview/customization/form/success.html" target="_blank">Live Preview</a></h3>
+<h3>Success &amp; Error State - <a href="../../examples/preview/customization/form/formStates.html" target="_blank">Live Preview</a></h3>
 
-<p><img alt="Form Field Placeholders" src="../../examples/img/customization/form/success.png" /></p>
-<pre data-src="../../examples/src/customization/form/success.js"></pre>
+<p><img alt="Form States" src="../../examples/img/customization/form/formStates.png" /></p>
+<pre data-src="../../examples/src/customization/form/formStates.js"></pre>
               
             </div>
           </div>
