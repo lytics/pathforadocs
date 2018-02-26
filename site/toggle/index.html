@@ -390,11 +390,11 @@
   <tr>
     <td>data-pftrigger</td>
     <td>string</td>
-    <td>ID of the audience in Lytics or <code>default</code></td>
+    <td>id or slug of the audience in Lytics or <code>default</code></td>
   </tr>
 </table>
 
-<p>If you have multiple elements with the same <code>pfgroup</code> name, only the first element with a matching <code>pftrigger</code> value will show. This means at most only one piece of content in a group will show. </p>
+<p>If you have multiple elements with the same <code>pfgroup</code> name, only the first element with a matching <code>pftrigger</code> value will show. This means at most only one piece of content in a group will show.</p>
 <p>Additionally, if the user is not a member of one of these audiences you can create a default piece of content and set the <code>pftrigger</code> value to be <code>default</code>. This default element will only show if the user is not a member of any other <code>pftrigger</code> audience in a group.</p>
 <p><strong>Note:</strong> Pathfora loads some CSS to hide the toggle elements before selecting which element to show. Because the js library will load after the body of the page, you may see a flicker of html elements when the page is first loaded. To prevent this, you can add the following line of CSS to the stylesheet of your website:</p>
 <pre><code class="css">[data-pftrigger], [data-pfrecommend]{ display: none; }

@@ -382,7 +382,7 @@
   <tr>
     <td>data-pfrecommend</td>
     <td>string</td>
-    <td>id or slug of a content collection (segment on the content table) to filter content</td>
+    <td>id of a content collection - the source list of content to recommend from** or <code>default</code></td>
   </tr>
 
   <tr>
@@ -392,6 +392,8 @@
   </tr>
 </table>
 
+<p>** You can get the id of the content collection from the url of that collection in the Lytics App.</p>
+<p><img class="full" src="../assets/content_collection_id.jpg" alt="Content Collection API from url"></p>
 <p>Inside the container element you may have several elements with the <code>data-pfblock</code> attribute. Based on the value of this attribute, Pathfora will set the innerHTML or an attribute of this element to contain a content recommendation for the user.</p>
 <p>Note that only one <code>data-pfshuffle</code> attribute is necessary per unique value of <code>data-pfrecommend</code>. This shuffle param will be applied to all blocks with a common <code>data-pfrecommend</code> value since we make one API request per content collection referenced on the page.</p>
 <table>
