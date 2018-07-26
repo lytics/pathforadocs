@@ -99,12 +99,6 @@
                 <li class="toctree-l3"><a href="#triggerwidgets">triggerWidgets</a></li>
                 
             
-                <li class="toctree-l3"><a href="#integratewithfacebook">integrateWithFacebook</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#integratewithgoogle">integrateWithGoogle</a></li>
-                
-            
             </ul>
         
     </li>
@@ -395,6 +389,30 @@
     <td>object</td>
     <td><code>optional</code> <a href="../config">generalized configuration</a> settings for multiple modules</td>
   </tr>
+  <tr>
+    <td>options</td>
+    <td>object</td>
+    <td><code>optional</code> additional options for the initialization (see below)</td>
+  </tr>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>options</code> object</td>
+    </tr>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>priority</td>
+    <td>string</td>
+    <td>if set to "ordered" will only show the first valid module from the list initialized</td>
+  </tr>
 </table>
 
 <h3 id="type-configuration-methods">Type Configuration Methods</h3>
@@ -425,6 +443,11 @@
     <td>headline</td>
     <td>string</td>
     <td>header or title text for the module, not supported by some layouts</td>
+  </tr>
+  <tr>
+    <td>footerText</td>
+    <td>string</td>
+    <td>text footer content, not supported by some layouts</td>
   </tr>
 </table>
 
@@ -513,50 +536,6 @@
     <td>widgetIds</td>
     <td>array</td>
     <td><code>optional</code> list of ids of widgets to display, if empty this method will trigger all widgets with the <a href="../../display_conditions#manualTrigger">manualTrigger</a> displayCondition</td>
-  </tr>
-</table>
-
-<h2 id="integratewithfacebook">integrateWithFacebook</h2>
-<p>Pathfora can integrate with your Facebook App to allow users to autofill the fields of <a href="../../types/form/">form</a> or <a href="../../types/gate/">gate</a> modules with their facebook profile information. This method is used to authenticate this integration with Facebook. This method should be called <strong>before</strong> the <code>initializeWidgets</code> method.</p>
-<p><strong>Note:</strong> In addition to using this method, you will need to enable <a href="../../types/form/#showsociallogin">social login</a> in your module's config to allow for form autofill.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="3" align="center"><code>integrateWithFacebook</code> function</td>
-    </tr>
-    <tr>
-      <th>Parameter</th>
-      <th>Type</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>appId</td>
-    <td>string</td>
-    <td><a href="https://developers.facebook.com/docs/apps/register#app-id" target="_blank">app id</a> for your Facebook application</td>
-  </tr>
-</table>
-
-<h2 id="integratewithgoogle">integrateWithGoogle</h2>
-<p>Pathfora can integrate with your Google App to allow users to autofill the fields of <a href="../../types/form/">form</a> or <a href="../../types/gate/">gate</a> modules with their Google account information. This method is used to authenticate this integration with Google. This method should be called <strong>before</strong> the <code>initializeWidgets</code> method.</p>
-<p><strong>Note:</strong> In addition to using this method, you will need to enable <a href="../../types/form/#showsociallogin">social login</a> in your module's config to allow for form autofill.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="3" align="center"><code>integrateWithGoogle</code> function</td>
-    </tr>
-    <tr>
-      <th>Parameter</th>
-      <th>Type</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>clientID</td>
-    <td>string</td>
-    <td><a href="https://developers.google.com/identity/sign-in/web/devconsole-project" target="_blank">client id</a> from your Google Developers Console project</td>
   </tr>
 </table>
               
