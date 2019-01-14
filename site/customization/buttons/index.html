@@ -7,8 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
   <title>Action Buttons - PathforaJS SDK</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -16,6 +21,7 @@
   <link rel="stylesheet" href="../../css/highlight.css">
   <link href="../../assets/examples.css" rel="stylesheet">
   <link href="../../assets/vendor/formbuilder.min.css" rel="stylesheet">
+
   
   <script>
     // Current page data
@@ -26,7 +32,13 @@
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
   <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="../../assets/pre.js"></script>
+  <script src="../../assets/builder.js"></script>
+  <script src="../../assets/vendor/formbuilder.js"></script>
+
   
 </head>
 
@@ -46,174 +58,267 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
+        <ul class="current">
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../..">Pathfora JS</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Pathfora JS</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Modules</span>
+            <li>
     <ul class="subnav">
-                <li class="">
-                    
-    <span class="caption-text">API Reference</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../api/methods/">Methods</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../api/config/">Generalized Configuration</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Types</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../types/message/">Message</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../types/form/">Form</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../types/subscription/">Subscription</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../types/gate/">Gate</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Layouts</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../layouts/modal/">Modal</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../layouts/slideout/">Slideout</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../layouts/bar/">Bar</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../layouts/button/">Button</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../layouts/inline/">Inline</a>
-                </li>
-    </ul>
-                </li>
-                <li class=" current">
-                    
-    <span class="caption-text">Customization</span>
-    <ul class="subnav">
-                <li class="toctree-l3 current">
-                    
-    <a class="current" href="./">Action Buttons</a>
-    <ul class="subnav">
+    <li><span>Modules</span></li>
+
+        
             
-    <li class="toctree-l4"><a href="#okshow">okShow</a></li>
-    
-
-    <li class="toctree-l4"><a href="#cancelshow">cancelShow</a></li>
-    
-
-    <li class="toctree-l4"><a href="#okmessage">okMessage</a></li>
-    
-
-    <li class="toctree-l4"><a href="#cancelmessage">cancelMessage</a></li>
-    
-
-    </ul>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../themes/">Color Themes</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../css/">Custom CSS</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../form/">Form Elements</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../form_builder/">Form Schema Builder</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../form_legacy/">Form Elements (Legacy)</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../responsive/">Responsive Styles</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../entity_fields/">Entity Fields</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../ab_testing/">A/B Testing</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../targeting/">Audience Targeting</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../callbacks/">Callbacks</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../content_recommend/">Content Recommendations</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../display_conditions/">Display Conditions</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../tracking/">Tracking</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Inline Personalization</span>
     <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../toggle/">Element Toggle</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../inline_content/">Inline Content Recommendations</a>
-                </li>
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/methods/">Methods</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/config/">Generalized Configuration</a>
+        
+    </li>
+
+        
     </ul>
-	    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Types</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/message/">Message</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/form/">Form</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/subscription/">Subscription</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/gate/">Gate</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Layouts</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/modal/">Modal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/slideout/">Slideout</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/bar/">Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/button/">Button</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/inline/">Inline</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Customization</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Action Buttons</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#okshow">okShow</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#cancelshow">cancelShow</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#okmessage">okMessage</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#cancelmessage">cancelMessage</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../themes/">Color Themes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../css/">Custom CSS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../form/">Form Elements</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../form_builder/">Form Schema Builder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../form_legacy/">Form Elements (Legacy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../responsive/">Responsive Styles</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../entity_fields/">Entity Fields</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ab_testing/">A/B Testing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../targeting/">Audience Targeting</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../callbacks/">Callbacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../content_recommend/">Content Recommendations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../display_conditions/">Display Conditions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tracking/">Tracking</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Inline Personalization</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../toggle/">Element Toggle</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../inline_content/">Inline Content Recommendations</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
           
         </ul>
       </div>
@@ -371,7 +476,7 @@
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+	  
         </div>
       </div>
 
@@ -379,7 +484,7 @@
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+<div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -390,14 +495,6 @@
       
     </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-      <script src="../../assets/pre.js"></script>
-      <script src="../../assets/builder.js"></script>
-      <script src="../../assets/vendor/formbuilder.js"></script>
-      <script src="../../search/require.js"></script>
-      <script src="../../search/search.js"></script>
 
 </body>
 </html>

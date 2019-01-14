@@ -5,10 +5,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="None">
   
+  
+  
+  <title>PathforaJS SDK</title>
+  
+
   <link rel="shortcut icon" href="./img/favicon.ico">
-  <title>Pathfora JS - PathforaJS SDK</title>
+
+  
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="./css/theme.css" type="text/css" />
@@ -16,17 +21,24 @@
   <link rel="stylesheet" href="./css/highlight.css">
   <link href="./assets/examples.css" rel="stylesheet">
   <link href="./assets/vendor/formbuilder.min.css" rel="stylesheet">
+
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Pathfora JS";
+    var mkdocs_page_name = "None";
     var mkdocs_page_input_path = "index.md";
     var mkdocs_page_url = "/";
   </script>
   
   <script src="./js/jquery-2.1.1.min.js"></script>
   <script src="./js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="./assets/pre.js"></script>
+  <script src="./assets/builder.js"></script>
+  <script src="./assets/vendor/formbuilder.js"></script>
+
   
 </head>
 
@@ -46,168 +58,261 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
+        <ul class="current">
           
-            <li class="toctree-l1 current">
-		
-    <a class="current" href=".">Pathfora JS</a>
-    <ul class="subnav">
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Pathfora JS</a>
+        
+            <ul>
             
-    <li class="toctree-l2"><a href="#getting-started">Getting Started</a></li>
-    
-
-    <li class="toctree-l2"><a href="#overview">Overview</a></li>
-    
-
-    </ul>
-	    </li>
+                <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#overview">Overview</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Modules</span>
+            <li>
     <ul class="subnav">
-                <li class="">
-                    
-    <span class="caption-text">API Reference</span>
+    <li><span>Modules</span></li>
+
+        
+            
     <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="api/methods/">Methods</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="api/config/">Generalized Configuration</a>
-                </li>
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="api/methods/">Methods</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="api/config/">Generalized Configuration</a>
+        
+    </li>
+
+        
     </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Types</span>
+
+        
+            
     <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="types/message/">Message</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="types/form/">Form</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="types/subscription/">Subscription</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="types/gate/">Gate</a>
-                </li>
+    <li><span>Types</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="types/message/">Message</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="types/form/">Form</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="types/subscription/">Subscription</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="types/gate/">Gate</a>
+        
+    </li>
+
+        
     </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Layouts</span>
+
+        
+            
     <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="layouts/modal/">Modal</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="layouts/slideout/">Slideout</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="layouts/bar/">Bar</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="layouts/button/">Button</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="layouts/inline/">Inline</a>
-                </li>
+    <li><span>Layouts</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="layouts/modal/">Modal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="layouts/slideout/">Slideout</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="layouts/bar/">Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="layouts/button/">Button</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="layouts/inline/">Inline</a>
+        
+    </li>
+
+        
     </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Customization</span>
+
+        
+            
     <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="customization/buttons/">Action Buttons</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="customization/themes/">Color Themes</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="customization/css/">Custom CSS</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="customization/form/">Form Elements</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="customization/form_builder/">Form Schema Builder</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="customization/form_legacy/">Form Elements (Legacy)</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="customization/responsive/">Responsive Styles</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="customization/entity_fields/">Entity Fields</a>
-                </li>
+    <li><span>Customization</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="customization/buttons/">Action Buttons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="customization/themes/">Color Themes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="customization/css/">Custom CSS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="customization/form/">Form Elements</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="customization/form_builder/">Form Schema Builder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="customization/form_legacy/">Form Elements (Legacy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="customization/responsive/">Responsive Styles</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="customization/entity_fields/">Entity Fields</a>
+        
+    </li>
+
+        
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="ab_testing/">A/B Testing</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="targeting/">Audience Targeting</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="callbacks/">Callbacks</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="content_recommend/">Content Recommendations</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="display_conditions/">Display Conditions</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="tracking/">Tracking</a>
-                </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="ab_testing/">A/B Testing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="targeting/">Audience Targeting</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="callbacks/">Callbacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="content_recommend/">Content Recommendations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="display_conditions/">Display Conditions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="tracking/">Tracking</a>
+        
+    </li>
+
+        
     </ul>
-	    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Inline Personalization</span>
+            <li>
     <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="toggle/">Element Toggle</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="inline_content/">Inline Content Recommendations</a>
-                </li>
+    <li><span>Inline Personalization</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="toggle/">Element Toggle</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="inline_content/">Inline Content Recommendations</a>
+        
+    </li>
+
+        
     </ul>
-	    </li>
+<li>
           
         </ul>
       </div>
@@ -245,7 +350,7 @@
 <h2 id="getting-started">Getting Started</h2>
 <p>Before you begin creating modules with Pathfora you must add the <a href="https://activate.getlytics.com/resources/documentation/getting_started_web">Lytics javascript tag</a> to your website. If you are using <a href="https://activate.getlytics.com/resources/documentation/campaigns_introduction">Lytics Personalization</a> to power your modules, Pathfora will be automatically loaded through your Lytics javascript tag. If you're creating a custom module, you will need to load pathfora as well as <a href="https://activate.getlytics.com/resources/documentation/getting_started_web">your Lytics javascript tag</a>.</p>
 <pre><code class="html">&lt;!-- Pathfora Tag --&gt;
-&lt;script src=&quot;https://c.lytics.io/static/pathfora.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://c.lytics.io/static/pathfora.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 
 <p>Next you'll need to set up configuration for your module and initialize it with <code>initializeWidgets</code>. Example configurations, settings, and their generated modules can be found throughout the documentation.</p>
@@ -311,7 +416,7 @@
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+	  
         </div>
       </div>
 
@@ -319,7 +424,7 @@
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+<div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -328,19 +433,11 @@
       
     </span>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="./js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-      <script src="./assets/pre.js"></script>
-      <script src="./assets/builder.js"></script>
-      <script src="./assets/vendor/formbuilder.js"></script>
-      <script src="./search/require.js"></script>
-      <script src="./search/search.js"></script>
 
 </body>
 </html>
 
 <!--
-MkDocs version : 0.17.5
-Build Date UTC : 2018-10-11 18:49:24
+MkDocs version : 0.15.3
+Build Date UTC : 2018-07-26 17:32:56.913673
 -->
