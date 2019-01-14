@@ -2,142 +2,142 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/api/methods/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/api/config/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/types/message/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/types/form/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/types/subscription/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/types/gate/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/layouts/modal/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/layouts/slideout/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/layouts/bar/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/layouts/button/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/layouts/inline/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/customization/buttons/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/customization/themes/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/customization/css/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/customization/form/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/customization/form_builder/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/customization/form_legacy/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/customization/responsive/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/customization/entity_fields/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/ab_testing/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/targeting/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/callbacks/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/content_recommend/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/display_conditions/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/tracking/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/toggle/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/inline_content/</loc>
-     <lastmod>2018-10-11</lastmod>
+     <lastmod>2019-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
