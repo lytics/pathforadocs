@@ -190,7 +190,7 @@ pathfora.initializeWidgets([module]);
 </code></pre>
 
 <p>For example, if a user submits a form on your website asking for their info and you would like to immediately use this data in a module, you can add it to the customData object before initializing the widget and use an entity field template.</p>
-<p>If the data isn't present for the user viewing the modal there are a couple options available to control the behavior of the module. By default if there is no fallback defined for the field, pathfora will prevent the module from being displayed for visitors who lack the necessary fields. This behavior can be changed with the <a href="/display_conditions#showonmissingfields">showOnMissingFields</a> display condition.</p>
+<p>If the data isn't present for the user viewing the modal there are a couple options available to control the behavior of the module. By default if there is no fallback defined for the field, pathfora will prevent the module from being displayed for visitors who lack the necessary fields. This behavior can be changed with the <a href="../../display_conditions#showonmissingfields">showOnMissingFields</a> display condition.</p>
 <h1 id="defining-a-fallback-default-value">Defining a Fallback (default) Value</h1>
 <p>Alternatively, we can define a fallback or "default" value to be shown in case the user is missing the data. To define a fallback value, place it after the field name and a <code>|</code> character in the template. Building from the previous example:</p>
 <pre><code class="javascript">var module = new pathfora.Message({
