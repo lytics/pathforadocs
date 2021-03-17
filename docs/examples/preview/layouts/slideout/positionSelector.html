@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pathfora Example</title>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+<style>
+.overlay {
+  width: 80%;
+  min-height: 80%;
+  height: 80%;
+  border: 1px dotted black;
+  display: block;
+  position: relative;
+  margin: auto;
+}
+
+html, body {
+  height: 100%;
+}
+</style>
+</head>
+
+<body class="example">
+
+<div class="overlay"></div>
+
+<script src="https://c.lytics.io/api/tag/0d47e6304d12858905b4f111090a68a1/lio.js"></script>
+<script src="https://c.lytics.io/static/pathfora.min.js"></script>
+<script>
+var moduleCustomPosition = new pathfora.Message({
+  id: 'slideout-custom-position',
+  layout: 'slideout',
+  positionSelector: '.overlay',
+  msg: 'slideout with a custom position'
+});
+
+pathfora.initializeWidgets([moduleCustomPosition]);
+
+</script>
+
+</body>
+</html>

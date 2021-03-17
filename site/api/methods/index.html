@@ -8,27 +8,37 @@
   
   
   
-  <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>Methods - PathforaJS SDK</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+  
 
-  <link rel="stylesheet" href="../../css/theme.css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  <link href="../../assets/examples.css" rel="stylesheet" />
-  <link href="../../assets/vendor/formbuilder.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../assets/examples.css" rel="stylesheet">
+  <link href="../../assets/vendor/formbuilder.min.css" rel="stylesheet">
+
   
   <script>
     // Current page data
     var mkdocs_page_name = "Methods";
     var mkdocs_page_input_path = "api/methods.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/api/methods/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="../../assets/pre.js"></script>
+  <script src="../../assets/builder.js"></script>
+  <script src="../../assets/vendor/formbuilder.js"></script>
+
   
 </head>
 
@@ -38,103 +48,285 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> PathforaJS SDK</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../..">Pathfora JS</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Modules</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">API Reference</a>
-    <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Methods</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#type-configuration-methods">Type Configuration Methods</a>
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Pathfora JS</a>
+        
     </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Modules</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>API Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Methods</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#initializewidgets">initializeWidgets</a></li>
+                
+                    <li><a class="toctree-l4" href="#type-configuration-methods">Type Configuration Methods</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#initializeabtesting">initializeABTesting</a></li>
+                
+                    <li><a class="toctree-l4" href="#ab-test-configuration-method">A/B Test Configuration Method</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#recommendcontent">recommendContent</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#triggerwidgets">triggerWidgets</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../config/">Generalized Configuration</a>
+        
+    </li>
+
+        
     </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../config/">Generalized Configuration</a>
-                </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Types</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/message/">Message</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/form/">Form</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/subscription/">Subscription</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../types/gate/">Gate</a>
+        
+    </li>
+
+        
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Types</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../types/message/">Message</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../types/form/">Form</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../types/subscription/">Subscription</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../types/gate/">Gate</a>
-                </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Layouts</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/modal/">Modal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/slideout/">Slideout</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/bar/">Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/button/">Button</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layouts/inline/">Inline</a>
+        
+    </li>
+
+        
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Layouts</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../layouts/modal/">Modal</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../layouts/slideout/">Slideout</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../layouts/bar/">Bar</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../layouts/button/">Button</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../layouts/inline/">Inline</a>
-                </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Customization</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../customization/buttons/">Action Buttons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../customization/themes/">Color Themes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../customization/css/">Custom CSS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../customization/form/">Form Elements</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../customization/form_builder/">Form Schema Builder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../customization/form_legacy/">Form Elements (Legacy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../customization/responsive/">Responsive Styles</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../customization/entity_fields/">Entity Fields</a>
+        
+    </li>
+
+        
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Customization</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../customization/buttons/">Action Buttons</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../customization/themes/">Color Themes</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../customization/css/">Custom CSS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../customization/form/">Form Elements</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../customization/form_builder/">Form Schema Builder</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../customization/form_legacy/">Form Elements (Legacy)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../customization/responsive/">Responsive Styles</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../customization/entity_fields/">Entity Fields</a>
-                </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ab_testing/">A/B Testing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../targeting/">Audience Targeting</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../callbacks/">Callbacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../content_recommend/">Content Recommendations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../display_conditions/">Display Conditions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tracking/">Tracking</a>
+        
+    </li>
+
+        
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../ab_testing/">A/B Testing</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../targeting/">Audience Targeting</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../callbacks/">Callbacks</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../content_recommend/">Content Recommendations</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../display_conditions/">Display Conditions</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tracking/">Tracking</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Inline Personalization</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../toggle/">Element Toggle</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../inline_content/">Inline Content Recommendations</a>
-                    </li>
-                </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Inline Personalization</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../toggle/">Element Toggle</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../inline_content/">Inline Content Recommendations</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
       </div>
-    </div>
+      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -154,11 +346,11 @@
     
       
         
-          <li>API Reference &raquo;</li>
+          <li>Modules &raquo;</li>
         
       
         
-          <li>Modules &raquo;</li>
+          <li>API Reference &raquo;</li>
         
       
     
@@ -167,7 +359,6 @@
       
     </li>
   </ul>
-  
   <hr/>
 </div>
           <div role="main">
@@ -262,13 +453,13 @@
 
 <p>We cover each of these type configuration methods and their parameters in individual type sections below.</p>
 <ul>
-<li><a href="../../types/message">Message</a></li>
-<li><a href="../../types/form">Form</a></li>
-<li><a href="../../types/subscription">Subscription</a></li>
-<li><a href="../../types/gate">Gate</a></li>
+<li><a href="../../types/message/">Message</a></li>
+<li><a href="../../types/form/">Form</a></li>
+<li><a href="../../types/subscription/">Subscription</a></li>
+<li><a href="../../types/gate/">Gate</a></li>
 </ul>
 <h2 id="initializeabtesting">initializeABTesting</h2>
-<p>This method is used to initialize <a href="/ab_testing">A/B Tests</a> modules. If you're creating an A/B test scenario this should always be called <strong>before</strong> the <code>initializeWidgets</code> method.</p>
+<p>This method is used to initialize <a href="../../ab_testing/">A/B Tests</a> modules. If you're creating an A/B test scenario this should always be called <strong>before</strong> the <code>initializeWidgets</code> method.</p>
 <table>
   <thead>
     <tr>
@@ -289,7 +480,7 @@
 </table>
 
 <h3 id="ab-test-configuration-method">A/B Test Configuration Method</h3>
-<p>A/B Tests have their own configuration method <code>ABTest</code>. We cover this configuration in detail in the <a href="/ab_testing">A/B Testing</a> section of this documentation.</p>
+<p>A/B Tests have their own configuration method <code>ABTest</code>. We cover this configuration in detail in the <a href="../../ab_testing/">A/B Testing</a> section of this documentation.</p>
 <h2 id="recommendcontent">recommendContent</h2>
 <p>recommendContent is a public method that makes a request to the Lytics content recommendation API and returns a list of recommended documents for the user. These results are also placed in session storage to reduce the number of calls to the API on subsequent page loads.</p>
 <p><strong>Note:</strong> Lytics' public recommendation API is only authorized for use on domains that have been whitelisted for your account. Contact your customer success representative <code>success@lytics.io</code> if you need to whitelist a new domain.</p>
@@ -313,7 +504,7 @@
   <tr>
     <td>params</td>
     <td>object</td>
-    <td>object containing query params to call the <a href="https://learn.lytics.com/documentation/developer/api-docs/content#content-recommendation">recommendation API</a> with</td>
+    <td>object containing query params to call the <a href="https://www.getlytics.com/developers/rest-api#content-recommendation">recommendation API</a> with</td>
   </tr>
   <tr>
     <td>id</td>
@@ -328,7 +519,7 @@
 </table>
 
 <h2 id="triggerwidgets">triggerWidgets</h2>
-<p>triggerWidgets is a helper method for widgets with the <a href="../../display_conditions#manualTrigger">manualTrigger</a> displayCondition. Widgets with this condition will not display until all other display conditions are met, and  <code>pathora.triggerWidgets</code> has been called. This method similar to <code>initializeWidgets</code>, in that it is useful when you want to trigger a module on a custom event with javascript. However with <code>triggerWidgets</code> you don't need to pass in widget object thus you can call this method even before the config has been defined.</p>
+<p>triggerWidgets is a helper method for widgets with the <a href="../../display_conditions/#manualTrigger">manualTrigger</a> displayCondition. Widgets with this condition will not display until all other display conditions are met, and  <code>pathora.triggerWidgets</code> has been called. This method similar to <code>initializeWidgets</code>, in that it is useful when you want to trigger a module on a custom event with javascript. However with <code>triggerWidgets</code> you don't need to pass in widget object thus you can call this method even before the config has been defined.</p>
 <table>
   <thead>
     <tr>
@@ -369,9 +560,9 @@
     
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+	  
         </div>
       </div>
 
@@ -379,7 +570,7 @@
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
+<div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -390,18 +581,6 @@
       
     </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" defer></script>
-      <script src="../../assets/pre.js" defer></script>
-      <script src="../../assets/builder.js" defer></script>
-      <script src="../../assets/vendor/formbuilder.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
 
 </body>
 </html>
