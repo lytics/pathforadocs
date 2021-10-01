@@ -7,38 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
-  <title>Inline - PathforaJS SDK</title>
-  
-
   <link rel="shortcut icon" href="../../img/favicon.ico">
-
-  
+  <title>Inline - PathforaJS SDK</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   <link href="../../assets/examples.css" rel="stylesheet">
   <link href="../../assets/vendor/formbuilder.min.css" rel="stylesheet">
-
   
   <script>
     // Current page data
     var mkdocs_page_name = "Inline";
     var mkdocs_page_input_path = "layouts/inline.md";
-    var mkdocs_page_url = "/layouts/inline/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="../../assets/pre.js"></script>
-  <script src="../../assets/builder.js"></script>
-  <script src="../../assets/vendor/formbuilder.js"></script>
-
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -52,270 +41,177 @@
         <a href="../.." class="icon icon-home"> PathforaJS SDK</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
+	<ul class="current">
+	  
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../..">Pathfora JS</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Pathfora JS</a>
+	    </li>
           
-            <li>
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
     <ul class="subnav">
-    <li><span>Modules</span></li>
-
-        
-            
+                <li class="">
+                    
+    <span class="caption-text">API Reference</span>
     <ul class="subnav">
-    <li><span>API Reference</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../api/methods/">Methods</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../api/config/">Generalized Configuration</a>
-        
-    </li>
-
-        
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/methods/">Methods</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/config/">Generalized Configuration</a>
+                </li>
     </ul>
-
-        
-            
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Types</span>
     <ul class="subnav">
-    <li><span>Types</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../types/message/">Message</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../types/form/">Form</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../types/subscription/">Subscription</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../types/gate/">Gate</a>
-        
-    </li>
-
-        
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../types/message/">Message</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../types/form/">Form</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../types/subscription/">Subscription</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../types/gate/">Gate</a>
+                </li>
     </ul>
-
-        
-            
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Layouts</span>
     <ul class="subnav">
-    <li><span>Layouts</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../modal/">Modal</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../slideout/">Slideout</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../bar/">Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../button/">Button</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Inline</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#position">position</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#variant">variant</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#image">image</a></li>
-                
-            
-            </ul>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
+                <li class="toctree-l3">
+                    
+    <a class="" href="../modal/">Modal</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../slideout/">Slideout</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../bar/">Bar</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../button/">Button</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Inline</a>
     <ul class="subnav">
-    <li><span>Customization</span></li>
-
-        
             
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/buttons/">Action Buttons</a>
-        
-    </li>
+    <li class="toctree-l4"><a href="#positionselector">positionSelector</a></li>
+    
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/themes/">Color Themes</a>
-        
-    </li>
+    <li class="toctree-l4"><a href="#variant">variant</a></li>
+    
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/css/">Custom CSS</a>
-        
-    </li>
+    <li class="toctree-l4"><a href="#image">image</a></li>
+    
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/form/">Form Elements</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/form_builder/">Form Schema Builder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/form_legacy/">Form Elements (Legacy)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/responsive/">Responsive Styles</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../customization/entity_fields/">Entity Fields</a>
-        
-    </li>
-
-        
     </ul>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../ab_testing/">A/B Testing</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../targeting/">Audience Targeting</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../callbacks/">Callbacks</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../content_recommend/">Content Recommendations</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../display_conditions/">Display Conditions</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../tracking/">Tracking</a>
-        
-    </li>
-
-        
+                </li>
     </ul>
-<li>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Customization</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../customization/buttons/">Action Buttons</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../customization/themes/">Color Themes</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../customization/css/">Custom CSS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../customization/form/">Form Elements</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../customization/form_builder/">Form Schema Builder</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../customization/form_legacy/">Form Elements (Legacy)</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../customization/responsive/">Responsive Styles</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../customization/entity_fields/">Entity Fields</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../ab_testing/">A/B Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../targeting/">Audience Targeting</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../callbacks/">Callbacks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../content_recommend/">Content Recommendations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../display_conditions/">Display Conditions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../tracking/">Tracking</a>
+                </li>
+    </ul>
+	    </li>
           
-            <li>
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Inline Personalization</span>
     <ul class="subnav">
-    <li><span>Inline Personalization</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../toggle/">Element Toggle</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../inline_content/">Inline Content Recommendations</a>
-        
-    </li>
-
-        
+                <li class="">
+                    
+    <a class="" href="../../toggle/">Element Toggle</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inline_content/">Inline Content Recommendations</a>
+                </li>
     </ul>
-<li>
+	    </li>
           
         </ul>
       </div>
@@ -339,11 +235,11 @@
     
       
         
-          <li>Modules &raquo;</li>
+          <li>Layouts &raquo;</li>
         
       
         
-          <li>Layouts &raquo;</li>
+          <li>Modules &raquo;</li>
         
       
     
@@ -358,30 +254,29 @@
             <div class="section">
               
                 <p>An inline module can be inserted into an existing <code>&lt;div&gt;</code> element on your page. This allows you to render personalized messages and forms anywhere on your page.</p>
-<p><strong>Note:</strong> inline modules do not support the close or cancel option. Clicking the confirm button will trigger <a href="../../customization/form/#success">success state</a> for form or subscription modules, but we recommend setting a <a href="../../callbacks/">custom callback</a> for the confirm button of a inline message module.</p>
-<h2 id="position">position</h2>
-<p>Position determines the HTML element that should contain the inline module.</p>
+<p><strong>Note:</strong> inline modules do not support the close or cancel option. Clicking the confirm button will trigger <a href="../../customization/form#success">success state</a> for form or subscription modules, but we recommend setting a <a href="../../callbacks">custom callback</a> for the confirm button of a inline message module.</p>
+<h2 id="positionselector">positionSelector</h2>
+<p>Define the DOM selector of the parent element you would like to insert the module into.</p>
 <table>
   <thead>
     <tr>
-      <td colspan="2" align="center"><code>position</code> string</td>
+      <td colspan="2" align="center"><code>positionSelector</code> string</td>
     </tr>
     <tr>
       <th>Value</th>
       <th>Behavior</th>
     </tr>
   </thead>
-
   <tr>
     <td>selector</td>
     <td>Javascript selector of an existing div on the page where the module should appear.</td>
   </tr>
 </table>
 
-<h3>Positions - <a href="../../examples/preview/layouts/inline/positions.html" target="_blank">Live Preview</a></h3>
+<h3>Custom Position - <a href="../../examples/preview/layouts/inline/positionSelector.html" target="_blank">Live Preview</a></h3>
 
-<p><img alt="Position Inline Modules" src="../../examples/img/layouts/inline/positions.png" /></p>
-<pre data-src="../../examples/src/layouts/inline/positions.js"></pre>
+<p><img alt="Position Inline Modules" src="../../examples/img/layouts/inline/positionSelector.png" /></p>
+<pre data-src="../../examples/src/layouts/inline/positionSelector.js"></pre>
 
 <h2 id="variant">variant</h2>
 <p>Variant determines any extra content that may be used by the module.</p>
@@ -457,7 +352,7 @@
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
@@ -465,7 +360,7 @@
 
   </div>
 
-<div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -476,6 +371,13 @@
       
     </span>
 </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" defer></script>
+      <script src="../../assets/pre.js" defer></script>
+      <script src="../../assets/builder.js" defer></script>
+      <script src="../../assets/vendor/formbuilder.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

@@ -1,92 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
-    <url>
-     <loc>None/</loc>
-     <lastmod>2018-07-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
     <url>
      <loc>None</loc>
-     <lastmod></lastmod>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>None</loc>
-     <lastmod></lastmod>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>None</loc>
-     <lastmod></lastmod>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>None</loc>
-     <lastmod></lastmod>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/ab_testing/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/targeting/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/callbacks/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/content_recommend/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/display_conditions/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/tracking/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>None/toggle/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/inline_content/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2021-10-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>
