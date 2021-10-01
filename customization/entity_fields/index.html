@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   <link href="../../assets/examples.css" rel="stylesheet">
   <link href="../../assets/vendor/formbuilder.min.css" rel="stylesheet">
   
@@ -21,12 +21,13 @@
     // Current page data
     var mkdocs_page_name = "Entity Fields";
     var mkdocs_page_input_path = "customization/entity_fields.md";
-    var mkdocs_page_url = "/customization/entity_fields/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -40,7 +41,7 @@
         <a href="../.." class="icon icon-home"> PathforaJS SDK</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -231,11 +232,11 @@
     
       
         
-          <li>Modules &raquo;</li>
+          <li>Customization &raquo;</li>
         
       
         
-          <li>Customization &raquo;</li>
+          <li>Modules &raquo;</li>
         
       
     
@@ -268,7 +269,7 @@ pathfora.initializeWidgets([module]);
 </code></pre>
 
 <p>For example, if a user submits a form on your website asking for their info and you would like to immediately use this data in a module, you can add it to the customData object before initializing the widget and use an entity field template.</p>
-<p>If the data isn't present for the user viewing the modal there are a couple options available to control the behavior of the module. By default if there is no fallback defined for the field, pathfora will prevent the module from being displayed for visitors who lack the necessary fields. This behavior can be changed with the <a href="../../../display_conditions#showonmissingfields">showOnMissingFields</a> display condition.</p>
+<p>If the data isn't present for the user viewing the modal there are a couple options available to control the behavior of the module. By default if there is no fallback defined for the field, pathfora will prevent the module from being displayed for visitors who lack the necessary fields. This behavior can be changed with the <a href="../../display_conditions#showonmissingfields">showOnMissingFields</a> display condition.</p>
 <h1 id="defining-a-fallback-default-value">Defining a Fallback (default) Value</h1>
 <p>Alternatively, we can define a fallback or "default" value to be shown in case the user is missing the data. To define a fallback value, place it after the field name and a <code>|</code> character in the template. Building from the previous example:</p>
 <pre><code class="javascript">var module = new pathfora.Message({
@@ -326,13 +327,12 @@ pathfora.initializeWidgets([module]);
     </span>
 </div>
     <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-      <script src="../../assets/pre.js"></script>
-      <script src="../../assets/builder.js"></script>
-      <script src="../../assets/vendor/formbuilder.js"></script>
-      <script src="../../search/require.js"></script>
-      <script src="../../search/search.js"></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" defer></script>
+      <script src="../../assets/pre.js" defer></script>
+      <script src="../../assets/builder.js" defer></script>
+      <script src="../../assets/vendor/formbuilder.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

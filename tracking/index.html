@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   <link href="../assets/examples.css" rel="stylesheet">
   <link href="../assets/vendor/formbuilder.min.css" rel="stylesheet">
   
@@ -21,12 +21,13 @@
     // Current page data
     var mkdocs_page_name = "Tracking";
     var mkdocs_page_input_path = "tracking.md";
-    var mkdocs_page_url = "/tracking/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -40,7 +41,7 @@
         <a href=".." class="icon icon-home"> PathforaJS SDK</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -318,7 +319,7 @@ var widget = new pathfora.Form({
 <tr>
 <td><code>pf-widget-action</code></td>
 <td>string</td>
-<td>custom tracking names for button click events as defined in <a href="../../callbacks/#confirmaction">confirmAction</a> or <a href="../../callbacks/#cancelaction">cancelAction</a></td>
+<td>custom tracking names for button click events as defined in <a href="../callbacks/#confirmaction">confirmAction</a> or <a href="../callbacks/#cancelaction">cancelAction</a></td>
 </tr>
 <tr>
 <td><code>pf-form-username</code></td>
@@ -434,7 +435,7 @@ var widget = new pathfora.Form({
 </tr>
 </tbody>
 </table>
-<p>The <code>[event name]</code> signifier in eventAction will match the event names for the <code>pf-widget-event</code> field <a href="#lytics">sent to Lytics</a>. However, if you've defined custom names in the <a href="../../callbacks/#confirmaction">confirmAction</a> or <a href="../../callbacks/#cancelaction">cancelAction</a> settings this will override the event name for those actions.</p>
+<p>The <code>[event name]</code> signifier in eventAction will match the event names for the <code>pf-widget-event</code> field <a href="#lytics">sent to Lytics</a>. However, if you've defined custom names in the <a href="../callbacks/#confirmaction">confirmAction</a> or <a href="../callbacks/#cancelaction">cancelAction</a> settings this will override the event name for those actions.</p>
               
             </div>
           </div>
@@ -479,13 +480,12 @@ var widget = new pathfora.Form({
     </span>
 </div>
     <script>var base_url = '..';</script>
-    <script src="../js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-      <script src="../assets/pre.js"></script>
-      <script src="../assets/builder.js"></script>
-      <script src="../assets/vendor/formbuilder.js"></script>
-      <script src="../search/require.js"></script>
-      <script src="../search/search.js"></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" defer></script>
+      <script src="../assets/pre.js" defer></script>
+      <script src="../assets/builder.js" defer></script>
+      <script src="../assets/vendor/formbuilder.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>
