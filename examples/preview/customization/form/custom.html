@@ -1,21 +1,44 @@
-<!DOCTYPE html>
 <html>
-<head>
-<title>Pathfora Example</title>
-<link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
-<style>
+  <head>
+    <title>Pathfora Example</title>
+    <link
+      href='https://fonts.googleapis.com/css?family=Roboto:400'
+      rel='stylesheet'
+      type='text/css'
+    />
+    <style>
+      
+    </style>
+  </head>
 
-</style>
-</head>
+  <body class='example'>
 
-<body class="example">
+    
 
-
-
-<script src="https://c.lytics.io/api/tag/0d47e6304d12858905b4f111090a68a1/lio.js"></script>
-<script src="https://c.lytics.io/static/pathfora.min.js"></script>
-<script>
-var form = new pathfora.Form({
+    <script type='text/javascript'>
+      !(function () { 'use strict'; var o = window.jstag || (window.jstag = {}),
+      r = []; function n(e) { o[e] = function () { for (var n =
+      arguments.length, t = new Array(n), i = 0; i < n; i++) t[i] =
+      arguments[i]; r.push([e, t]); }; } n('send'), n('mock'), n('identify'),
+      n('pageView'), n('unblock'), n('getid'), n('setid'), n('loadEntity'),
+      n('getEntity'), n('on'), n('once'), n('call'), (o.loadScript = function
+      (n, t, i) { var e = document.createElement('script'); (e.async = !0),
+      (e.src = n), (e.onload = t), (e.onerror = i); var o =
+      document.getElementsByTagName('script')[0], r = (o && o.parentNode) ||
+      document.head || document.body, c = o || r.lastChild; return null != c ?
+      r.insertBefore(e, c) : r.appendChild(e), this; }), (o.init = function n(t)
+      { return ( (this.config = t), this.loadScript(t.src, function () { if
+      (o.init === n) throw new Error('Load error!'); o.init(o.config), (function
+      () { for (var n = 0; n < r.length; n++) { var t = r[n][0], i = r[n][1];
+      o[t].apply(o, i); } r = void 0; })(); }), this ); }); })(); jstag.init({
+      src:
+      'https://c.lytics.io/api/tag/ea48c631489b0c19dd62ee5b40acca4b/latest.min.js',
+      stream: 'pathfora', pageAnalysis: { dataLayerPull: { disabled: true, }, },
+      });
+    </script>
+    <script>
+      jstag.on('pathfora.install.done', function () {
+      var form = new pathfora.Form({
   id: 'survey',
   layout: 'slideout',
   position: 'left',
@@ -24,52 +47,58 @@ var form = new pathfora.Form({
   theme: 'custom',
   formElements: [
     {
-      'type': 'text',
-      'name': 'name',
-      'label': 'Your Name',
-      'placeholder': 'Your Name',
-      'required': true
+      type: 'text',
+      name: 'name',
+      label: 'Your Name',
+      placeholder: 'Your Name',
+      required: true,
     },
     {
-      'type': 'select',
-      'label': 'What\'s your favorite animal?',
-      'placeholder': 'Select an animal...',
-      'name': 'favorite_animal',
-      'required': true,
-      'values': [
+      type: 'text',
+      placeholder: 'Only 5 Digits Allowed',
+      name: 'postal_code',
+      pattern: '^[0-9]{5}$',
+    },
+    {
+      type: 'select',
+      label: "What's your favorite animal?",
+      placeholder: 'Select an animal...',
+      name: 'favorite_animal',
+      required: true,
+      values: [
         {
           label: 'Cat',
-          value: 'cat'
+          value: 'cat',
         },
         {
           label: 'Dog',
-          value: 'dog'
+          value: 'dog',
         },
         {
           label: 'Horse',
-          value: 'horse'
-        }
-      ]
+          value: 'horse',
+        },
+      ],
     },
     {
       type: 'radio-group',
-      label: 'What\'s your favorite color?',
+      label: "What's your favorite color?",
       name: 'favorite_color',
       required: true,
       values: [
         {
           label: 'Red',
-          value: 'red'
+          value: 'red',
         },
         {
           label: 'Blue',
-          value: 'blue'
+          value: 'blue',
         },
         {
           label: 'Green',
-          value: 'green'
-        }
-      ]
+          value: 'green',
+        },
+      ],
     },
     {
       type: 'checkbox-group',
@@ -79,25 +108,25 @@ var form = new pathfora.Form({
       values: [
         {
           label: 'Vanilla',
-          value: 'vanilla'
+          value: 'vanilla',
         },
         {
           label: 'Chocolate',
-          value: 'chocolate'
+          value: 'chocolate',
         },
         {
           label: 'Strawberry',
-          value: 'strawberry'
-        }
-      ]
+          value: 'strawberry',
+        },
+      ],
     },
     {
       type: 'textarea',
       label: 'Comments',
       name: 'comments',
-      placeholder: 'Any more comments?'
-    }
-  ]
+      placeholder: 'Any more comments?',
+    },
+  ],
 });
 
 var form2 = new pathfora.Form({
@@ -111,7 +140,7 @@ var form2 = new pathfora.Form({
       type: 'text',
       name: 'name',
       placeholder: 'Your Name',
-      required: true
+      required: true,
     },
     {
       type: 'checkbox-group',
@@ -120,16 +149,17 @@ var form2 = new pathfora.Form({
       values: [
         {
           label: 'I agree',
-          value: 'agree'
-        }
-      ]
-    }
-  ]
+          value: 'agree',
+        },
+      ],
+    },
+  ],
 });
 
 window.pathfora.initializeWidgets([form, form2]);
 
-</script>
+      });
+    </script>
 
-</body>
+  </body>
 </html>
