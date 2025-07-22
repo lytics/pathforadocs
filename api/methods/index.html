@@ -304,6 +304,41 @@
   </tr>
 </table>
 
+<h2 id="clearall">clearAll</h2>
+<p>clearAll is a public method that clears every widget that has been opened/initialized by pathfora on the current page. This will remove any opened widgets from the DOM. No parameters are required to call this function.</p>
+<h2 id="clearbyid">clearById</h2>
+<p>clearById is a public method that clears all widgets based on the IDs passed to this function. Similarly to clearAll, it also removes any opened widgets from the DOM.</p>
+<table>
+  <thead>
+    <tr>
+      <td colspan="3" align="center"><code>clearById</code> function</td>
+    </tr>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>widgetIds</td>
+    <td>array</td>
+    <td><code>optional</code> list of ids of widgets to clear.</td>
+  </tr>
+</table>
+
+<h2 id="getwidgetdependencies">getWidgetDependencies</h2>
+<p>getWidgetDependencies returns a list of widgets that utilize any data returned by the Lytics JavaScript Tag. This includes widgets utilizing <a href="https://lytics.github.io/pathforadocs/targeting/">Audience Targeting and User Attribute Targeting</a>, <a href="https://lytics.github.io/pathforadocs/customization/entity_fields/">Entity Field Templates</a>. The response contains the specific data fields utilized by the widget. If we don't have context of what data is used (such as a custom targeting function), the data list for that widget returns <code>"*"</code> to indicate any fields may be utilized. No parameters are required to call this function. Here is an example response from this function:</p>
+<pre><code>[
+  &quot;widget-id-1&quot;: {
+    &quot;segment&quot;: [&quot;smt_new&quot;],
+    &quot;entityField&quot;: [&quot;name&quot;]
+  },
+  &quot;widget-id-2&quot;: {
+    &quot;entityField&quot;: [&quot;*&quot;]
+  }
+]
+</code></pre>
 <h2 id="triggerwidgets">triggerWidgets</h2>
 <p>triggerWidgets is a helper method for widgets with the <a href="../../display_conditions#manualtrigger">manualTrigger</a> displayCondition. Widgets with this condition will not display until all other display conditions are met, and <code>pathfora.triggerWidgets</code> has been called. This method is similar to <code>initializeWidgets</code>, in that it is useful when you want to trigger a module on a custom event with JavaScript. However with <code>triggerWidgets</code> you don't need to pass in widget object thus you can call this method even before the config has been defined.</p>
 <table>
@@ -324,6 +359,7 @@
     <td><code>optional</code> list of ids of widgets to display, if empty this method will trigger all widgets with the <a href="../../display_conditions#manualtrigger">manualTrigger</a> displayCondition</td>
   </tr>
 </table>
+<p>```</p>
               
             </div>
           </div><footer>
