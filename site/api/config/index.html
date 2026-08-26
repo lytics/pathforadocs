@@ -65,8 +65,6 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../types/subscription/">Subscription</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../types/gate/">Gate</a>
-                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Layouts</a>
@@ -80,6 +78,8 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../layouts/button/">Button</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../layouts/inline/">Inline</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../layouts/gate/">Gate</a>
                 </li>
     </ul>
                   </li>
@@ -151,8 +151,8 @@
                 <p>For multiple modules with common elements we can define a configuration to apply to all modules, or all modules of a certain type. Maintaining a common config helps reduce the code repitition and allows you to change settings accross many widgets in one place. A config object can be passed as a second, optional argument to <a href="../methods#initializewidgets">initializeWidgets</a>.</p>
 <pre><code class="language-javascript">var config = {
   generic: {
-    theme: 'dark'
-  }
+    theme: 'dark',
+  },
 };
 
 pathfora.initializeWidgets([module, module2], config);
@@ -187,11 +187,6 @@ pathfora.initializeWidgets([module, module2], config);
     <td>subscription</td>
     <td>object</td>
     <td><code>optional</code> setting which should apply to all <b>subscription</b> modules initialized with this config</td>
-  </tr>
-   <tr>
-    <td>sitegate</td>
-    <td>object</td>
-    <td><code>optional</code> setting which should apply to all <b>gate</b> modules initialized with this config</td>
   </tr>
  </table>
 

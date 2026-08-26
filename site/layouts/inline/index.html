@@ -63,8 +63,6 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../types/subscription/">Subscription</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../types/gate/">Gate</a>
-                </li>
     </ul>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" >Layouts</a>
@@ -80,6 +78,8 @@
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Inline</a>
     <ul class="current">
     </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">Gate</a>
                 </li>
     </ul>
                   </li>
@@ -173,36 +173,8 @@
 <p><img alt="Position Inline Modules" src="../../examples/img/layouts/inline/positionSelector.png" /></p>
 <pre data-src="../../examples/src/layouts/inline/positionSelector.js"></pre>
 
-<h2 id="variant">variant</h2>
-<p>Variant determines any extra content that may be used by the module.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="2" align="center"><code>variant</code> int</td>
-    </tr>
-    <tr>
-      <th>Value</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>1</td>
-    <td><code>default</code> text-only-module</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>module includes an image</td>
-  </tr>
-  <tr>
-    <td>3</td>
-     <td>module includes a <a href="../../content_recommend">content recommendation</a></td>
-  </tr>
-</table>
-
 <h2 id="image">image</h2>
 <p>Define the featured image you would like to use for the module.</p>
-<p><strong>Note:</strong> This setting is only valid for modules with a variant value of 2.</p>
 <table>
   <thead>
     <tr>
@@ -219,7 +191,7 @@
   </tr>
 </table>
 
-<h3>Image (variant 2) - <a href="../../examples/preview/layouts/inline/image.html" target="_blank">Live Preview</a></h3>
+<h3>Image - <a href="../../examples/preview/layouts/inline/image.html" target="_blank">Live Preview</a></h3>
 
 <p><img alt="Image Inline Module" src="../../examples/img/layouts/inline/image.png" /></p>
 <pre data-src="../../examples/src/layouts/inline/image.js"></pre>
@@ -228,7 +200,7 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../button/" class="btn btn-neutral float-left" title="Button"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../customization/buttons/" class="btn btn-neutral float-right" title="Action Buttons">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../gate/" class="btn btn-neutral float-right" title="Gate">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -254,7 +226,7 @@
       <span><a href="../button/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../customization/buttons/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../gate/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
