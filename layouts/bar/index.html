@@ -63,8 +63,6 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../types/subscription/">Subscription</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../types/gate/">Gate</a>
-                </li>
     </ul>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" >Layouts</a>
@@ -82,6 +80,8 @@
                 <li class="toctree-l2"><a class="reference internal" href="../button/">Button</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../inline/">Inline</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">Gate</a>
                 </li>
     </ul>
                   </li>
@@ -207,32 +207,8 @@
 
 <pre data-src="../../examples/src/layouts/bar/positionSelector.js"></pre>
 
-<h2 id="variant">variant</h2>
-<p>Variant determines any extra content that may be used by the module.</p>
-<table>
-  <thead>
-    <tr>
-      <td colspan="2" align="center"><code>variant</code> int</td>
-    </tr>
-    <tr>
-      <th>Value</th>
-      <th>Behavior</th>
-    </tr>
-  </thead>
-
-  <tr>
-    <td>1</td>
-    <td><code>default</code> text-only-module</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>module includes an image</td>
-  </tr>
-</table>
-
 <h2 id="image">image</h2>
 <p>Define the featured image you would like to use for the module.</p>
-<p><strong>Note:</strong> This setting is only valid for modules with a variant value of 2.</p>
 <table>
   <thead>
     <tr>
@@ -249,7 +225,7 @@
   </tr>
 </table>
 
-<h3>Image (variant 2) - <a href="../../examples/preview/layouts/bar/image.html" target="_blank">Live Preview</a></h3>
+<h3>Image - <a href="../../examples/preview/layouts/bar/image.html" target="_blank">Live Preview</a></h3>
 
 <p><img alt="Image Bar Module" src="../../examples/img/layouts/bar/image.png" /></p>
 <pre data-src="../../examples/src/layouts/bar/image.js"></pre>

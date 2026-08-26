@@ -7,25 +7,13 @@
       type='text/css'
     />
     <style>
-      .overlay {
-  width: 80%;
-  min-height: 80%;
-  height: 80%;
-  border: 1px dotted black;
-  display: block;
-  position: relative;
-  margin: auto;
-}
-
-html, body {
-  height: 100%;
-}
+      
     </style>
   </head>
 
   <body class='example'>
 
-    <div class="overlay"></div>
+    
 
     <script type='text/javascript'>
       !(function () { 'use strict'; var o = window.jstag || (window.jstag = {}),
@@ -70,14 +58,15 @@ html, body {
     </script>
     <script>
       jstag.on('pathfora.install.done', function () {
-      var moduleCustomPosition = new pathfora.Message({
-  id: 'modal-custom-position',
-  layout: 'modal',
-  positionSelector: '.overlay',
-  msg: 'modal with a custom position'
+      var module = new pathfora.Form({
+  id: 'gate-modal',
+  layout: 'gate',
+  headline: 'Enter Your Info',
+  msg: 'Please enter your information to proceed',
+  image: '../../../../assets/lion.jpg',
 });
 
-pathfora.initializeWidgets([moduleCustomPosition]);
+pathfora.initializeWidgets([module]);
 
       });
     </script>
